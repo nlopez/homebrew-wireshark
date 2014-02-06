@@ -42,17 +42,16 @@ class Wireshark < Formula
   end
 
   def patches
-    { :p1 => "https://raw2.github.com/thalweg/homebrew-wireshark/master/spdyshark.patch" }
-    {
+    [
+      "https://raw2.github.com/thalweg/homebrew-wireshark/master/spdyshark.patch",
       # Removes SDK checks that prevent the build from working on CLT-only systems
       # Reported upstream: https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=9290
-      :p1 => DATA
-    }
-  #end if build.stable?
+      DATA
+    ]
   end
 
   def install
-    #system "./autogen.sh" if build.head?
+    ENV.append 'PATH',':/usr/local/bin'
     system "./autogen.sh"
 
     args = ["--disable-dependency-tracking",
