@@ -116,3 +116,4102 @@ diff -aur wireshark-1.10.5/plugins/Makefile.nmake wireshark-1.10.5-with-spdyshar
  	stats_tree  \
  	unistim     \
  	wimax       \
+diff -ruN wireshark-1.10.5/plugins/spdyshark/AUTHORS wireshark-1.10.5-with-spdyshark/plugins/spdyshark/AUTHORS
+--- wireshark-1.10.5/plugins/spdyshark/AUTHORS	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/AUTHORS	2014-02-06 00:46:34.000000000 -0500
+@@ -0,0 +1,3 @@
++Authors:
++Hasan Khalil <hkhalil@google.com>
++Eric Shienbrood <ers@google.com>
+diff -ruN wireshark-1.10.5/plugins/spdyshark/COPYING wireshark-1.10.5-with-spdyshark/plugins/spdyshark/COPYING
+--- wireshark-1.10.5/plugins/spdyshark/COPYING	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/COPYING	2014-02-06 00:46:34.000000000 -0500
+@@ -0,0 +1,340 @@
++		    GNU GENERAL PUBLIC LICENSE
++		       Version 2, June 1991
++
++ Copyright (C) 1989, 1991 Free Software Foundation, Inc.
++     59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++ Everyone is permitted to copy and distribute verbatim copies
++ of this license document, but changing it is not allowed.
++
++			    Preamble
++
++  The licenses for most software are designed to take away your
++freedom to share and change it.  By contrast, the GNU General Public
++License is intended to guarantee your freedom to share and change free
++software--to make sure the software is free for all its users.  This
++General Public License applies to most of the Free Software
++Foundation's software and to any other program whose authors commit to
++using it.  (Some other Free Software Foundation software is covered by
++the GNU Library General Public License instead.)  You can apply it to
++your programs, too.
++
++  When we speak of free software, we are referring to freedom, not
++price.  Our General Public Licenses are designed to make sure that you
++have the freedom to distribute copies of free software (and charge for
++this service if you wish), that you receive source code or can get it
++if you want it, that you can change the software or use pieces of it
++in new free programs; and that you know you can do these things.
++
++  To protect your rights, we need to make restrictions that forbid
++anyone to deny you these rights or to ask you to surrender the rights.
++These restrictions translate to certain responsibilities for you if you
++distribute copies of the software, or if you modify it.
++
++  For example, if you distribute copies of such a program, whether
++gratis or for a fee, you must give the recipients all the rights that
++you have.  You must make sure that they, too, receive or can get the
++source code.  And you must show them these terms so they know their
++rights.
++
++  We protect your rights with two steps: (1) copyright the software, and
++(2) offer you this license which gives you legal permission to copy,
++distribute and/or modify the software.
++
++  Also, for each author's protection and ours, we want to make certain
++that everyone understands that there is no warranty for this free
++software.  If the software is modified by someone else and passed on, we
++want its recipients to know that what they have is not the original, so
++that any problems introduced by others will not reflect on the original
++authors' reputations.
++
++  Finally, any free program is threatened constantly by software
++patents.  We wish to avoid the danger that redistributors of a free
++program will individually obtain patent licenses, in effect making the
++program proprietary.  To prevent this, we have made it clear that any
++patent must be licensed for everyone's free use or not licensed at all.
++
++  The precise terms and conditions for copying, distribution and
++modification follow.
++
++		    GNU GENERAL PUBLIC LICENSE
++   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
++
++  0. This License applies to any program or other work which contains
++a notice placed by the copyright holder saying it may be distributed
++under the terms of this General Public License.  The "Program", below,
++refers to any such program or work, and a "work based on the Program"
++means either the Program or any derivative work under copyright law:
++that is to say, a work containing the Program or a portion of it,
++either verbatim or with modifications and/or translated into another
++language.  (Hereinafter, translation is included without limitation in
++the term "modification".)  Each licensee is addressed as "you".
++
++Activities other than copying, distribution and modification are not
++covered by this License; they are outside its scope.  The act of
++running the Program is not restricted, and the output from the Program
++is covered only if its contents constitute a work based on the
++Program (independent of having been made by running the Program).
++Whether that is true depends on what the Program does.
++
++  1. You may copy and distribute verbatim copies of the Program's
++source code as you receive it, in any medium, provided that you
++conspicuously and appropriately publish on each copy an appropriate
++copyright notice and disclaimer of warranty; keep intact all the
++notices that refer to this License and to the absence of any warranty;
++and give any other recipients of the Program a copy of this License
++along with the Program.
++
++You may charge a fee for the physical act of transferring a copy, and
++you may at your option offer warranty protection in exchange for a fee.
++
++  2. You may modify your copy or copies of the Program or any portion
++of it, thus forming a work based on the Program, and copy and
++distribute such modifications or work under the terms of Section 1
++above, provided that you also meet all of these conditions:
++
++    a) You must cause the modified files to carry prominent notices
++    stating that you changed the files and the date of any change.
++
++    b) You must cause any work that you distribute or publish, that in
++    whole or in part contains or is derived from the Program or any
++    part thereof, to be licensed as a whole at no charge to all third
++    parties under the terms of this License.
++
++    c) If the modified program normally reads commands interactively
++    when run, you must cause it, when started running for such
++    interactive use in the most ordinary way, to print or display an
++    announcement including an appropriate copyright notice and a
++    notice that there is no warranty (or else, saying that you provide
++    a warranty) and that users may redistribute the program under
++    these conditions, and telling the user how to view a copy of this
++    License.  (Exception: if the Program itself is interactive but
++    does not normally print such an announcement, your work based on
++    the Program is not required to print an announcement.)
++
++These requirements apply to the modified work as a whole.  If
++identifiable sections of that work are not derived from the Program,
++and can be reasonably considered independent and separate works in
++themselves, then this License, and its terms, do not apply to those
++sections when you distribute them as separate works.  But when you
++distribute the same sections as part of a whole which is a work based
++on the Program, the distribution of the whole must be on the terms of
++this License, whose permissions for other licensees extend to the
++entire whole, and thus to each and every part regardless of who wrote it.
++
++Thus, it is not the intent of this section to claim rights or contest
++your rights to work written entirely by you; rather, the intent is to
++exercise the right to control the distribution of derivative or
++collective works based on the Program.
++
++In addition, mere aggregation of another work not based on the Program
++with the Program (or with a work based on the Program) on a volume of
++a storage or distribution medium does not bring the other work under
++the scope of this License.
++
++  3. You may copy and distribute the Program (or a work based on it,
++under Section 2) in object code or executable form under the terms of
++Sections 1 and 2 above provided that you also do one of the following:
++
++    a) Accompany it with the complete corresponding machine-readable
++    source code, which must be distributed under the terms of Sections
++    1 and 2 above on a medium customarily used for software interchange; or,
++
++    b) Accompany it with a written offer, valid for at least three
++    years, to give any third party, for a charge no more than your
++    cost of physically performing source distribution, a complete
++    machine-readable copy of the corresponding source code, to be
++    distributed under the terms of Sections 1 and 2 above on a medium
++    customarily used for software interchange; or,
++
++    c) Accompany it with the information you received as to the offer
++    to distribute corresponding source code.  (This alternative is
++    allowed only for noncommercial distribution and only if you
++    received the program in object code or executable form with such
++    an offer, in accord with Subsection b above.)
++
++The source code for a work means the preferred form of the work for
++making modifications to it.  For an executable work, complete source
++code means all the source code for all modules it contains, plus any
++associated interface definition files, plus the scripts used to
++control compilation and installation of the executable.  However, as a
++special exception, the source code distributed need not include
++anything that is normally distributed (in either source or binary
++form) with the major components (compiler, kernel, and so on) of the
++operating system on which the executable runs, unless that component
++itself accompanies the executable.
++
++If distribution of executable or object code is made by offering
++access to copy from a designated place, then offering equivalent
++access to copy the source code from the same place counts as
++distribution of the source code, even though third parties are not
++compelled to copy the source along with the object code.
++
++  4. You may not copy, modify, sublicense, or distribute the Program
++except as expressly provided under this License.  Any attempt
++otherwise to copy, modify, sublicense or distribute the Program is
++void, and will automatically terminate your rights under this License.
++However, parties who have received copies, or rights, from you under
++this License will not have their licenses terminated so long as such
++parties remain in full compliance.
++
++  5. You are not required to accept this License, since you have not
++signed it.  However, nothing else grants you permission to modify or
++distribute the Program or its derivative works.  These actions are
++prohibited by law if you do not accept this License.  Therefore, by
++modifying or distributing the Program (or any work based on the
++Program), you indicate your acceptance of this License to do so, and
++all its terms and conditions for copying, distributing or modifying
++the Program or works based on it.
++
++  6. Each time you redistribute the Program (or any work based on the
++Program), the recipient automatically receives a license from the
++original licensor to copy, distribute or modify the Program subject to
++these terms and conditions.  You may not impose any further
++restrictions on the recipients' exercise of the rights granted herein.
++You are not responsible for enforcing compliance by third parties to
++this License.
++
++  7. If, as a consequence of a court judgment or allegation of patent
++infringement or for any other reason (not limited to patent issues),
++conditions are imposed on you (whether by court order, agreement or
++otherwise) that contradict the conditions of this License, they do not
++excuse you from the conditions of this License.  If you cannot
++distribute so as to satisfy simultaneously your obligations under this
++License and any other pertinent obligations, then as a consequence you
++may not distribute the Program at all.  For example, if a patent
++license would not permit royalty-free redistribution of the Program by
++all those who receive copies directly or indirectly through you, then
++the only way you could satisfy both it and this License would be to
++refrain entirely from distribution of the Program.
++
++If any portion of this section is held invalid or unenforceable under
++any particular circumstance, the balance of the section is intended to
++apply and the section as a whole is intended to apply in other
++circumstances.
++
++It is not the purpose of this section to induce you to infringe any
++patents or other property right claims or to contest validity of any
++such claims; this section has the sole purpose of protecting the
++integrity of the free software distribution system, which is
++implemented by public license practices.  Many people have made
++generous contributions to the wide range of software distributed
++through that system in reliance on consistent application of that
++system; it is up to the author/donor to decide if he or she is willing
++to distribute software through any other system and a licensee cannot
++impose that choice.
++
++This section is intended to make thoroughly clear what is believed to
++be a consequence of the rest of this License.
++
++  8. If the distribution and/or use of the Program is restricted in
++certain countries either by patents or by copyrighted interfaces, the
++original copyright holder who places the Program under this License
++may add an explicit geographical distribution limitation excluding
++those countries, so that distribution is permitted only in or among
++countries not thus excluded.  In such case, this License incorporates
++the limitation as if written in the body of this License.
++
++  9. The Free Software Foundation may publish revised and/or new versions
++of the General Public License from time to time.  Such new versions will
++be similar in spirit to the present version, but may differ in detail to
++address new problems or concerns.
++
++Each version is given a distinguishing version number.  If the Program
++specifies a version number of this License which applies to it and "any
++later version", you have the option of following the terms and conditions
++either of that version or of any later version published by the Free
++Software Foundation.  If the Program does not specify a version number of
++this License, you may choose any version ever published by the Free Software
++Foundation.
++
++  10. If you wish to incorporate parts of the Program into other free
++programs whose distribution conditions are different, write to the author
++to ask for permission.  For software which is copyrighted by the Free
++Software Foundation, write to the Free Software Foundation; we sometimes
++make exceptions for this.  Our decision will be guided by the two goals
++of preserving the free status of all derivatives of our free software and
++of promoting the sharing and reuse of software generally.
++
++			    NO WARRANTY
++
++  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
++FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
++OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
++PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
++OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
++MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
++TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
++PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
++REPAIR OR CORRECTION.
++
++  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
++WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
++REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
++INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
++OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED
++TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
++YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
++PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
++POSSIBILITY OF SUCH DAMAGES.
++
++		     END OF TERMS AND CONDITIONS
++
++	    How to Apply These Terms to Your New Programs
++
++  If you develop a new program, and you want it to be of the greatest
++possible use to the public, the best way to achieve this is to make it
++free software which everyone can redistribute and change under these terms.
++
++  To do so, attach the following notices to the program.  It is safest
++to attach them to the start of each source file to most effectively
++convey the exclusion of warranty; and each file should have at least
++the "copyright" line and a pointer to where the full notice is found.
++
++    <one line to give the program's name and a brief idea of what it does.>
++    Copyright (C) <year>  <name of author>
++
++    This program is free software; you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++    the Free Software Foundation; either version 2 of the License, or
++    (at your option) any later version.
++
++    This program is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++    GNU General Public License for more details.
++
++    You should have received a copy of the GNU General Public License
++    along with this program; if not, write to the Free Software
++    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++
++
++Also add information on how to contact you by electronic and paper mail.
++
++If the program is interactive, make it output a short notice like this
++when it starts in an interactive mode:
++
++    Gnomovision version 69, Copyright (C) year  name of author
++    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
++    This is free software, and you are welcome to redistribute it
++    under certain conditions; type `show c' for details.
++
++The hypothetical commands `show w' and `show c' should show the appropriate
++parts of the General Public License.  Of course, the commands you use may
++be called something other than `show w' and `show c'; they could even be
++mouse-clicks or menu items--whatever suits your program.
++
++You should also get your employer (if you work as a programmer) or your
++school, if any, to sign a "copyright disclaimer" for the program, if
++necessary.  Here is a sample; alter the names:
++
++  Yoyodyne, Inc., hereby disclaims all copyright interest in the program
++  `Gnomovision' (which makes passes at compilers) written by James Hacker.
++
++  <signature of Ty Coon>, 1 April 1989
++  Ty Coon, President of Vice
++
++This General Public License does not permit incorporating your program into
++proprietary programs.  If your program is a subroutine library, you may
++consider it more useful to permit linking proprietary applications with the
++library.  If this is what you want to do, use the GNU Library General
++Public License instead of this License.
+diff -ruN wireshark-1.10.5/plugins/spdyshark/Makefile.am wireshark-1.10.5-with-spdyshark/plugins/spdyshark/Makefile.am
+--- wireshark-1.10.5/plugins/spdyshark/Makefile.am	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/Makefile.am	2014-02-06 00:46:34.000000000 -0500
+@@ -0,0 +1,128 @@
++# Makefile.am
++# Automake file for SPDY plugin
++#
++# $Id$
++#
++# Wireshark - Network traffic analyzer
++# By Gerald Combs <gerald@wireshark.org>
++# Copyright 1998 Gerald Combs
++# 
++# This program is free software; you can redistribute it and/or
++# modify it under the terms of the GNU General Public License
++# as published by the Free Software Foundation; either version 2
++# of the License, or (at your option) any later version.
++# 
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++# 
++# You should have received a copy of the GNU General Public License
++# along with this program; if not, write to the Free Software
++# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++#
++
++INCLUDES = -I$(top_srcdir) -I$(includedir)
++
++include Makefile.common
++
++if HAVE_WARNINGS_AS_ERRORS
++AM_CFLAGS = -Werror
++endif
++
++plugindir = @plugindir@
++
++plugin_LTLIBRARIES = spdy.la
++spdy_la_SOURCES = \
++	plugin.c \
++	moduleinfo.h \
++	$(DISSECTOR_SRC) \
++	$(DISSECTOR_SUPPORT_SRC) \
++	$(DISSECTOR_INCLUDES)
++spdy_la_LDFLAGS = -module -avoid-version
++spdy_la_LIBADD = @PLUGIN_LIBS@
++
++# Libs must be cleared, or else libtool won't create a shared module.
++# If your module needs to be linked against any particular libraries,
++# add them here.
++LIBS =
++
++#
++# Build plugin.c, which contains the plugin version[] string, a
++# function plugin_register() that calls the register routines for all
++# protocols, and a function plugin_reg_handoff() that calls the handoff
++# registration routines for all protocols.
++#
++# We do this by scanning sources.  If that turns out to be too slow,
++# maybe we could just require every .o file to have an register routine
++# of a given name (packet-aarp.o -> proto_register_aarp, etc.).
++#
++# Formatting conventions:  The name of the proto_register_* routines an
++# proto_reg_handoff_* routines must start in column zero, or must be
++# preceded only by "void " starting in column zero, and must not be
++# inside #if.
++#
++# DISSECTOR_SRC is assumed to have all the files that need to be scanned.
++#
++# For some unknown reason, having a big "for" loop in the Makefile
++# to scan all the files doesn't work with some "make"s; they seem to
++# pass only the first few names in the list to the shell, for some
++# reason.
++#
++# Therefore, we have a script to generate the plugin.c file.
++# The shell script runs slowly, as multiple greps and seds are run
++# for each input file; this is especially slow on Windows.  Therefore,
++# if Python is present (as indicated by PYTHON being defined), we run
++# a faster Python script to do that work instead.
++#
++# The first argument is the directory in which the source files live.
++# The second argument is "plugin", to indicate that we should build
++# a plugin.c file for a plugin.
++# All subsequent arguments are the files to scan.
++#
++plugin.c: $(DISSECTOR_SRC) $(top_srcdir)/tools/make-dissector-reg \
++    $(top_srcdir)/tools/make-dissector-reg.py
++	@if test -n "$(PYTHON)"; then \
++		echo Making plugin.c with python ; \
++		$(PYTHON) $(top_srcdir)/tools/make-dissector-reg.py $(srcdir) \
++		    plugin $(DISSECTOR_SRC) ; \
++	else \
++		echo Making plugin.c with shell script ; \
++		$(top_srcdir)/tools/make-dissector-reg $(srcdir) \
++		    $(plugin_src) plugin $(DISSECTOR_SRC) ; \
++	fi
++
++#
++# Currently plugin.c can be included in the distribution because
++# we always build all protocol dissectors. We used to have to check
++# whether or not to build the snmp dissector. If we again need to
++# variably build something, making plugin.c non-portable, uncomment
++# the dist-hook line below.
++#
++# Oh, yuk.  We don't want to include "plugin.c" in the distribution, as
++# its contents depend on the configuration, and therefore we want it
++# to be built when the first "make" is done; however, Automake insists
++# on putting *all* source into the distribution.
++#
++# We work around this by having a "dist-hook" rule that deletes
++# "plugin.c", so that "dist" won't pick it up.
++#
++#dist-hook:
++#	@rm -f $(distdir)/plugin.c
++
++CLEANFILES = \
++	spdy \
++	*~
++
++MAINTAINERCLEANFILES = \
++	Makefile.in	\
++	plugin.c
++
++EXTRA_DIST = \
++	Makefile.common		\
++	Makefile.nmake		\
++	moduleinfo.nmake	\
++	plugin.rc.in
++
++checkapi:
++	$(PERL) $(top_srcdir)/tools/checkAPIs.pl -g abort -g termoutput $(DISSECTOR_SRC) $(DISSECTOR_INCLUDES)
+diff -ruN wireshark-1.10.5/plugins/spdyshark/Makefile.common wireshark-1.10.5-with-spdyshark/plugins/spdyshark/Makefile.common
+--- wireshark-1.10.5/plugins/spdyshark/Makefile.common	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/Makefile.common	2014-02-06 00:46:34.000000000 -0500
+@@ -0,0 +1,40 @@
++# Makefile.common for SPDY plugin
++#     Contains the stuff from Makefile.am and Makefile.nmake that is
++#     a) common to both files and
++#     b) portable between both files
++#
++# $Id$
++#
++# Wireshark - Network traffic analyzer
++# By Gerald Combs <gerald@wireshark.org>
++# Copyright 1998 Gerald Combs
++#
++# This program is free software; you can redistribute it and/or
++# modify it under the terms of the GNU General Public License
++# as published by the Free Software Foundation; either version 2
++# of the License, or (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program; if not, write to the Free Software
++# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++# the name of the plugin
++PLUGIN_NAME = spdy
++
++# the dissector sources (without any helpers)
++DISSECTOR_SRC = \
++	packet-spdy.c
++
++# corresponding headers
++DISSECTOR_INCLUDES =	\
++	packet-spdy.h
++
++# Dissector helpers.  They're included in the source files in this
++# directory, but they're not dissectors themselves, i.e. they're not
++# used to generate "register.c").
++#DISSECTOR_SUPPORT_SRC =
+diff -ruN wireshark-1.10.5/plugins/spdyshark/Makefile.in wireshark-1.10.5-with-spdyshark/plugins/spdyshark/Makefile.in
+--- wireshark-1.10.5/plugins/spdyshark/Makefile.in	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/Makefile.in	2014-02-06 00:47:35.000000000 -0500
+@@ -0,0 +1,945 @@
++# Makefile.in generated by automake 1.14.1 from Makefile.am.
++# @configure_input@
++
++# Copyright (C) 1994-2013 Free Software Foundation, Inc.
++
++# This Makefile.in is free software; the Free Software Foundation
++# gives unlimited permission to copy and/or distribute it,
++# with or without modifications, as long as this notice is preserved.
++
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
++# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
++# PARTICULAR PURPOSE.
++
++@SET_MAKE@
++
++# Makefile.am
++# Automake file for SPDY plugin
++#
++# $Id$
++#
++# Wireshark - Network traffic analyzer
++# By Gerald Combs <gerald@wireshark.org>
++# Copyright 1998 Gerald Combs
++# 
++# This program is free software; you can redistribute it and/or
++# modify it under the terms of the GNU General Public License
++# as published by the Free Software Foundation; either version 2
++# of the License, or (at your option) any later version.
++# 
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++# 
++# You should have received a copy of the GNU General Public License
++# along with this program; if not, write to the Free Software
++# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++#
++
++# Makefile.common for SPDY plugin
++#     Contains the stuff from Makefile.am and Makefile.nmake that is
++#     a) common to both files and
++#     b) portable between both files
++#
++# $Id$
++#
++# Wireshark - Network traffic analyzer
++# By Gerald Combs <gerald@wireshark.org>
++# Copyright 1998 Gerald Combs
++#
++# This program is free software; you can redistribute it and/or
++# modify it under the terms of the GNU General Public License
++# as published by the Free Software Foundation; either version 2
++# of the License, or (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program; if not, write to the Free Software
++# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++VPATH = @srcdir@
++am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'
++am__make_running_with_option = \
++  case $${target_option-} in \
++      ?) ;; \
++      *) echo "am__make_running_with_option: internal error: invalid" \
++              "target option '$${target_option-}' specified" >&2; \
++         exit 1;; \
++  esac; \
++  has_opt=no; \
++  sane_makeflags=$$MAKEFLAGS; \
++  if $(am__is_gnu_make); then \
++    sane_makeflags=$$MFLAGS; \
++  else \
++    case $$MAKEFLAGS in \
++      *\\[\ \	]*) \
++        bs=\\; \
++        sane_makeflags=`printf '%s\n' "$$MAKEFLAGS" \
++          | sed "s/$$bs$$bs[$$bs $$bs	]*//g"`;; \
++    esac; \
++  fi; \
++  skip_next=no; \
++  strip_trailopt () \
++  { \
++    flg=`printf '%s\n' "$$flg" | sed "s/$$1.*$$//"`; \
++  }; \
++  for flg in $$sane_makeflags; do \
++    test $$skip_next = yes && { skip_next=no; continue; }; \
++    case $$flg in \
++      *=*|--*) continue;; \
++        -*I) strip_trailopt 'I'; skip_next=yes;; \
++      -*I?*) strip_trailopt 'I';; \
++        -*O) strip_trailopt 'O'; skip_next=yes;; \
++      -*O?*) strip_trailopt 'O';; \
++        -*l) strip_trailopt 'l'; skip_next=yes;; \
++      -*l?*) strip_trailopt 'l';; \
++      -[dEDm]) skip_next=yes;; \
++      -[JT]) skip_next=yes;; \
++    esac; \
++    case $$flg in \
++      *$$target_option*) has_opt=yes; break;; \
++    esac; \
++  done; \
++  test $$has_opt = yes
++am__make_dryrun = (target_option=n; $(am__make_running_with_option))
++am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
++pkgdatadir = $(datadir)/@PACKAGE@
++pkgincludedir = $(includedir)/@PACKAGE@
++pkglibdir = $(libdir)/@PACKAGE@
++pkglibexecdir = $(libexecdir)/@PACKAGE@
++am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
++install_sh_DATA = $(install_sh) -c -m 644
++install_sh_PROGRAM = $(install_sh) -c
++install_sh_SCRIPT = $(install_sh) -c
++INSTALL_HEADER = $(INSTALL_DATA)
++transform = $(program_transform_name)
++NORMAL_INSTALL = :
++PRE_INSTALL = :
++POST_INSTALL = :
++NORMAL_UNINSTALL = :
++PRE_UNINSTALL = :
++POST_UNINSTALL = :
++build_triplet = @build@
++host_triplet = @host@
++target_triplet = @target@
++DIST_COMMON = $(srcdir)/Makefile.common $(srcdir)/Makefile.in \
++	$(srcdir)/Makefile.am $(top_srcdir)/depcomp AUTHORS COPYING
++subdir = plugins/spdyshark
++ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
++am__aclocal_m4_deps = $(top_srcdir)/aclocal-fallback/glib-2.0.m4 \
++	$(top_srcdir)/aclocal-fallback/gtk-2.0.m4 \
++	$(top_srcdir)/aclocal-fallback/gtk-3.0.m4 \
++	$(top_srcdir)/aclocal-fallback/libgcrypt.m4 \
++	$(top_srcdir)/aclocal-fallback/libsmi.m4 \
++	$(top_srcdir)/aclocal-fallback/qt.m4 \
++	$(top_srcdir)/acinclude.m4 $(top_srcdir)/configure.ac
++am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
++	$(ACLOCAL_M4)
++mkinstalldirs = $(install_sh) -d
++CONFIG_HEADER = $(top_builddir)/config.h
++CONFIG_CLEAN_FILES =
++CONFIG_CLEAN_VPATH_FILES =
++am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
++am__vpath_adj = case $$p in \
++    $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
++    *) f=$$p;; \
++  esac;
++am__strip_dir = f=`echo $$p | sed -e 's|^.*/||'`;
++am__install_max = 40
++am__nobase_strip_setup = \
++  srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*|]/\\\\&/g'`
++am__nobase_strip = \
++  for p in $$list; do echo "$$p"; done | sed -e "s|$$srcdirstrip/||"
++am__nobase_list = $(am__nobase_strip_setup); \
++  for p in $$list; do echo "$$p $$p"; done | \
++  sed "s| $$srcdirstrip/| |;"' / .*\//!s/ .*/ ./; s,\( .*\)/[^/]*$$,\1,' | \
++  $(AWK) 'BEGIN { files["."] = "" } { files[$$2] = files[$$2] " " $$1; \
++    if (++n[$$2] == $(am__install_max)) \
++      { print $$2, files[$$2]; n[$$2] = 0; files[$$2] = "" } } \
++    END { for (dir in files) print dir, files[dir] }'
++am__base_list = \
++  sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
++  sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
++am__uninstall_files_from_dir = { \
++  test -z "$$files" \
++    || { test ! -d "$$dir" && test ! -f "$$dir" && test ! -r "$$dir"; } \
++    || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
++         $(am__cd) "$$dir" && rm -f $$files; }; \
++  }
++am__installdirs = "$(DESTDIR)$(plugindir)"
++LTLIBRARIES = $(plugin_LTLIBRARIES)
++spdy_la_DEPENDENCIES =
++am__objects_1 = packet-spdy.lo
++am__objects_2 =
++am_spdy_la_OBJECTS = plugin.lo $(am__objects_1) $(am__objects_2)
++spdy_la_OBJECTS = $(am_spdy_la_OBJECTS)
++AM_V_lt = $(am__v_lt_@AM_V@)
++am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
++am__v_lt_0 = --silent
++am__v_lt_1 = 
++spdy_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
++	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++	$(spdy_la_LDFLAGS) $(LDFLAGS) -o $@
++AM_V_P = $(am__v_P_@AM_V@)
++am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
++am__v_P_0 = false
++am__v_P_1 = :
++AM_V_GEN = $(am__v_GEN_@AM_V@)
++am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
++am__v_GEN_0 = @echo "  GEN     " $@;
++am__v_GEN_1 = 
++AM_V_at = $(am__v_at_@AM_V@)
++am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
++am__v_at_0 = @
++am__v_at_1 = 
++DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
++depcomp = $(SHELL) $(top_srcdir)/depcomp
++am__depfiles_maybe = depfiles
++am__mv = mv -f
++COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
++	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
++	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
++	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
++	$(AM_CFLAGS) $(CFLAGS)
++AM_V_CC = $(am__v_CC_@AM_V@)
++am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
++am__v_CC_0 = @echo "  CC      " $@;
++am__v_CC_1 = 
++CCLD = $(CC)
++LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
++	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++AM_V_CCLD = $(am__v_CCLD_@AM_V@)
++am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
++am__v_CCLD_0 = @echo "  CCLD    " $@;
++am__v_CCLD_1 = 
++SOURCES = $(spdy_la_SOURCES)
++DIST_SOURCES = $(spdy_la_SOURCES)
++am__can_run_installinfo = \
++  case $$AM_UPDATE_INFO_DIR in \
++    n|no|NO) false;; \
++    *) (install-info --version) >/dev/null 2>&1;; \
++  esac
++am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
++# Read a list of newline-separated strings from the standard input,
++# and print each of them once, without duplicates.  Input order is
++# *not* preserved.
++am__uniquify_input = $(AWK) '\
++  BEGIN { nonempty = 0; } \
++  { items[$$0] = 1; nonempty = 1; } \
++  END { if (nonempty) { for (i in items) print i; }; } \
++'
++# Make sure the list of sources is unique.  This is necessary because,
++# e.g., the same source file might be shared among _SOURCES variables
++# for different programs/libraries.
++am__define_uniq_tagged_files = \
++  list='$(am__tagged_files)'; \
++  unique=`for i in $$list; do \
++    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
++  done | $(am__uniquify_input)`
++ETAGS = etags
++CTAGS = ctags
++DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
++A2X = @A2X@
++ACLOCAL = @ACLOCAL@
++AC_MIN_VERSION = @AC_MIN_VERSION@
++ADNS_LIBS = @ADNS_LIBS@
++AMTAR = @AMTAR@
++AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
++APPLICATIONSERVICES_FRAMEWORKS = @APPLICATIONSERVICES_FRAMEWORKS@
++AR = @AR@
++AUTOCONF = @AUTOCONF@
++AUTOHEADER = @AUTOHEADER@
++AUTOMAKE = @AUTOMAKE@
++AWK = @AWK@
++CC = @CC@
++CCDEPMODE = @CCDEPMODE@
++CC_FOR_BUILD = @CC_FOR_BUILD@
++CFLAGS = @CFLAGS@
++CFLAGS_FOR_BUILD = @CFLAGS_FOR_BUILD@
++COREFOUNDATION_FRAMEWORKS = @COREFOUNDATION_FRAMEWORKS@
++CPP = @CPP@
++CPPFLAGS = @CPPFLAGS@
++CXX = @CXX@
++CXXCPP = @CXXCPP@
++CXXDEPMODE = @CXXDEPMODE@
++CXXFLAGS = @CXXFLAGS@
++CYGPATH_W = @CYGPATH_W@
++C_ARES_LIBS = @C_ARES_LIBS@
++DEFS = @DEFS@
++DEPDIR = @DEPDIR@
++DESKTOP_FILE_INSTALL = @DESKTOP_FILE_INSTALL@
++DLLTOOL = @DLLTOOL@
++DOXYGEN = @DOXYGEN@
++DSYMUTIL = @DSYMUTIL@
++DUMPBIN = @DUMPBIN@
++DUMPCAP_GROUP = @DUMPCAP_GROUP@
++ECHO_C = @ECHO_C@
++ECHO_N = @ECHO_N@
++ECHO_T = @ECHO_T@
++EGREP = @EGREP@
++ELINKS = @ELINKS@
++ENABLE_STATIC = @ENABLE_STATIC@
++EXEEXT = @EXEEXT@
++FGREP = @FGREP@
++FOP = @FOP@
++GEOIP_LIBS = @GEOIP_LIBS@
++GETOPT_LO = @GETOPT_LO@
++GLIB_CFLAGS = @GLIB_CFLAGS@
++GLIB_GENMARSHAL = @GLIB_GENMARSHAL@
++GLIB_LIBS = @GLIB_LIBS@
++GLIB_MIN_VERSION = @GLIB_MIN_VERSION@
++GLIB_MKENUMS = @GLIB_MKENUMS@
++GOBJECT_QUERY = @GOBJECT_QUERY@
++GREP = @GREP@
++GTK2_MIN_VERSION = @GTK2_MIN_VERSION@
++GTK3_MIN_VERSION = @GTK3_MIN_VERSION@
++GTK_CFLAGS = @GTK_CFLAGS@
++GTK_LIBS = @GTK_LIBS@
++HAVE_A2X = @HAVE_A2X@
++HAVE_BLESS = @HAVE_BLESS@
++HAVE_DOXYGEN = @HAVE_DOXYGEN@
++HAVE_DPKG_BUILDPACKAGE = @HAVE_DPKG_BUILDPACKAGE@
++HAVE_ELINKS = @HAVE_ELINKS@
++HAVE_FOP = @HAVE_FOP@
++HAVE_HDIUTIL = @HAVE_HDIUTIL@
++HAVE_LYNX = @HAVE_LYNX@
++HAVE_OSX_PACKAGING = @HAVE_OSX_PACKAGING@
++HAVE_PKGMK = @HAVE_PKGMK@
++HAVE_PKGPROTO = @HAVE_PKGPROTO@
++HAVE_PKGTRANS = @HAVE_PKGTRANS@
++HAVE_RPM = @HAVE_RPM@
++HAVE_SVR4_PACKAGING = @HAVE_SVR4_PACKAGING@
++HAVE_W3M = @HAVE_W3M@
++HAVE_XCODEBUILD = @HAVE_XCODEBUILD@
++HAVE_XMLLINT = @HAVE_XMLLINT@
++HAVE_XSLTPROC = @HAVE_XSLTPROC@
++HTML_VIEWER = @HTML_VIEWER@
++INET_ATON_LO = @INET_ATON_LO@
++INET_NTOP_LO = @INET_NTOP_LO@
++INET_PTON_LO = @INET_PTON_LO@
++INSTALL = @INSTALL@
++INSTALL_DATA = @INSTALL_DATA@
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
++INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
++KRB5_CONFIG = @KRB5_CONFIG@
++KRB5_LIBS = @KRB5_LIBS@
++LD = @LD@
++LDFLAGS = @LDFLAGS@
++LDFLAGS_SHAREDLIB = @LDFLAGS_SHAREDLIB@
++LEX = @LEX@
++LEXLIB = @LEXLIB@
++LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
++LIBCAP_LIBS = @LIBCAP_LIBS@
++LIBGCRYPT_CFLAGS = @LIBGCRYPT_CFLAGS@
++LIBGCRYPT_CONFIG = @LIBGCRYPT_CONFIG@
++LIBGCRYPT_LIBS = @LIBGCRYPT_LIBS@
++LIBGNUTLS_CFLAGS = @LIBGNUTLS_CFLAGS@
++LIBGNUTLS_LIBS = @LIBGNUTLS_LIBS@
++LIBNL1_CFLAGS = @LIBNL1_CFLAGS@
++LIBNL1_LIBS = @LIBNL1_LIBS@
++LIBNL2_CFLAGS = @LIBNL2_CFLAGS@
++LIBNL2_LIBS = @LIBNL2_LIBS@
++LIBNL3_CFLAGS = @LIBNL3_CFLAGS@
++LIBNL3_LIBS = @LIBNL3_LIBS@
++LIBOBJS = @LIBOBJS@
++
++# Libs must be cleared, or else libtool won't create a shared module.
++# If your module needs to be linked against any particular libraries,
++# add them here.
++LIBS = 
++LIBSMI_CFLAGS = @LIBSMI_CFLAGS@
++LIBSMI_LDFLAGS = @LIBSMI_LDFLAGS@
++LIBSMI_VERSION = @LIBSMI_VERSION@
++LIBTOOL = @LIBTOOL@
++LIBTOOL_DEPS = @LIBTOOL_DEPS@
++LIPO = @LIPO@
++LN_S = @LN_S@
++LTLIBOBJS = @LTLIBOBJS@
++LUA_INCLUDES = @LUA_INCLUDES@
++LUA_LIBS = @LUA_LIBS@
++LYNX = @LYNX@
++MAKEINFO = @MAKEINFO@
++MANIFEST_TOOL = @MANIFEST_TOOL@
++MKDIR_P = @MKDIR_P@
++MOC = @MOC@
++NM = @NM@
++NMEDIT = @NMEDIT@
++NSL_LIBS = @NSL_LIBS@
++OBJDUMP = @OBJDUMP@
++OBJEXT = @OBJEXT@
++OSX_APP_FLAGS = @OSX_APP_FLAGS@
++OSX_MIN_VERSION = @OSX_MIN_VERSION@
++OTOOL = @OTOOL@
++OTOOL64 = @OTOOL64@
++PACKAGE = @PACKAGE@
++PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
++PACKAGE_NAME = @PACKAGE_NAME@
++PACKAGE_STRING = @PACKAGE_STRING@
++PACKAGE_TARNAME = @PACKAGE_TARNAME@
++PACKAGE_URL = @PACKAGE_URL@
++PACKAGE_VERSION = @PACKAGE_VERSION@
++PATH_SEPARATOR = @PATH_SEPARATOR@
++PCAP_CONFIG = @PCAP_CONFIG@
++PCAP_LIBS = @PCAP_LIBS@
++PERL = @PERL@
++PIE_CFLAGS = @PIE_CFLAGS@
++PIE_LDFLAGS = @PIE_LDFLAGS@
++PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
++PLUGIN_LIBS = @PLUGIN_LIBS@
++POD2HTML = @POD2HTML@
++POD2MAN = @POD2MAN@
++PORTAUDIO_INCLUDES = @PORTAUDIO_INCLUDES@
++PORTAUDIO_LIBS = @PORTAUDIO_LIBS@
++PYTHON = @PYTHON@
++PY_CFLAGS = @PY_CFLAGS@
++PY_LIBS = @PY_LIBS@
++QT_MIN_VERSION = @QT_MIN_VERSION@
++Qt_LIBS = @Qt_LIBS@
++RANLIB = @RANLIB@
++SED = @SED@
++SETCAP = @SETCAP@
++SET_MAKE = @SET_MAKE@
++SHELL = @SHELL@
++SOCKET_LIBS = @SOCKET_LIBS@
++SSL_LIBS = @SSL_LIBS@
++STRIP = @STRIP@
++STRNCASECMP_LO = @STRNCASECMP_LO@
++STRPTIME_C = @STRPTIME_C@
++STRPTIME_LO = @STRPTIME_LO@
++SYSTEMCONFIGURATION_FRAMEWORKS = @SYSTEMCONFIGURATION_FRAMEWORKS@
++UIC = @UIC@
++VERSION = @VERSION@
++W3M = @W3M@
++XMLLINT = @XMLLINT@
++XSLTPROC = @XSLTPROC@
++YACC = @YACC@
++YACCDUMMY = @YACCDUMMY@
++YFLAGS = @YFLAGS@
++abs_builddir = @abs_builddir@
++abs_srcdir = @abs_srcdir@
++abs_top_builddir = @abs_top_builddir@
++abs_top_srcdir = @abs_top_srcdir@
++ac_ct_AR = @ac_ct_AR@
++ac_ct_CC = @ac_ct_CC@
++ac_ct_CXX = @ac_ct_CXX@
++ac_ct_DUMPBIN = @ac_ct_DUMPBIN@
++ac_cv_wireshark_have_rpm = @ac_cv_wireshark_have_rpm@
++am__include = @am__include@
++am__leading_dot = @am__leading_dot@
++am__quote = @am__quote@
++am__tar = @am__tar@
++am__untar = @am__untar@
++bindir = @bindir@
++build = @build@
++build_alias = @build_alias@
++build_cpu = @build_cpu@
++build_os = @build_os@
++build_vendor = @build_vendor@
++builddir = @builddir@
++capinfos_bin = @capinfos_bin@
++capinfos_man = @capinfos_man@
++datadir = @datadir@
++datarootdir = @datarootdir@
++dftest_bin = @dftest_bin@
++dftest_man = @dftest_man@
++docdir = @docdir@
++dumpcap_bin = @dumpcap_bin@
++dumpcap_man = @dumpcap_man@
++dvidir = @dvidir@
++editcap_bin = @editcap_bin@
++editcap_man = @editcap_man@
++exec_prefix = @exec_prefix@
++host = @host@
++host_alias = @host_alias@
++host_cpu = @host_cpu@
++host_os = @host_os@
++host_vendor = @host_vendor@
++htmldir = @htmldir@
++includedir = @includedir@
++infodir = @infodir@
++install_sh = @install_sh@
++libdir = @libdir@
++libexecdir = @libexecdir@
++localedir = @localedir@
++localstatedir = @localstatedir@
++mandir = @mandir@
++mergecap_bin = @mergecap_bin@
++mergecap_man = @mergecap_man@
++mkdir_p = @mkdir_p@
++oldincludedir = @oldincludedir@
++pdfdir = @pdfdir@
++plugindir = @plugindir@
++prefix = @prefix@
++program_transform_name = @program_transform_name@
++psdir = @psdir@
++pythondir = @pythondir@
++randpkt_bin = @randpkt_bin@
++randpkt_man = @randpkt_man@
++rawshark_bin = @rawshark_bin@
++rawshark_man = @rawshark_man@
++reordercap_bin = @reordercap_bin@
++reordercap_man = @reordercap_man@
++sbindir = @sbindir@
++sharedstatedir = @sharedstatedir@
++srcdir = @srcdir@
++sysconfdir = @sysconfdir@
++target = @target@
++target_alias = @target_alias@
++target_cpu = @target_cpu@
++target_os = @target_os@
++target_vendor = @target_vendor@
++text2pcap_bin = @text2pcap_bin@
++text2pcap_man = @text2pcap_man@
++top_build_prefix = @top_build_prefix@
++top_builddir = @top_builddir@
++top_srcdir = @top_srcdir@
++tshark_bin = @tshark_bin@
++tshark_man = @tshark_man@
++wireshark_SUBDIRS = @wireshark_SUBDIRS@
++wireshark_bin = @wireshark_bin@
++wireshark_man = @wireshark_man@
++wiresharkfilter_man = @wiresharkfilter_man@
++INCLUDES = -I$(top_srcdir) -I$(includedir)
++
++# the name of the plugin
++PLUGIN_NAME = spdy
++
++# the dissector sources (without any helpers)
++DISSECTOR_SRC = \
++	packet-spdy.c
++
++
++# corresponding headers
++DISSECTOR_INCLUDES = \
++	packet-spdy.h
++
++@HAVE_WARNINGS_AS_ERRORS_TRUE@AM_CFLAGS = -Werror
++plugin_LTLIBRARIES = spdy.la
++spdy_la_SOURCES = \
++	plugin.c \
++	moduleinfo.h \
++	$(DISSECTOR_SRC) \
++	$(DISSECTOR_SUPPORT_SRC) \
++	$(DISSECTOR_INCLUDES)
++
++spdy_la_LDFLAGS = -module -avoid-version
++spdy_la_LIBADD = @PLUGIN_LIBS@
++
++#
++# Currently plugin.c can be included in the distribution because
++# we always build all protocol dissectors. We used to have to check
++# whether or not to build the snmp dissector. If we again need to
++# variably build something, making plugin.c non-portable, uncomment
++# the dist-hook line below.
++#
++# Oh, yuk.  We don't want to include "plugin.c" in the distribution, as
++# its contents depend on the configuration, and therefore we want it
++# to be built when the first "make" is done; however, Automake insists
++# on putting *all* source into the distribution.
++#
++# We work around this by having a "dist-hook" rule that deletes
++# "plugin.c", so that "dist" won't pick it up.
++#
++#dist-hook:
++#	@rm -f $(distdir)/plugin.c
++CLEANFILES = \
++	spdy \
++	*~
++
++MAINTAINERCLEANFILES = \
++	Makefile.in	\
++	plugin.c
++
++EXTRA_DIST = \
++	Makefile.common		\
++	Makefile.nmake		\
++	moduleinfo.nmake	\
++	plugin.rc.in
++
++all: all-am
++
++.SUFFIXES:
++.SUFFIXES: .c .lo .o .obj
++$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir)/Makefile.common $(am__configure_deps)
++	@for dep in $?; do \
++	  case '$(am__configure_deps)' in \
++	    *$$dep*) \
++	      ( cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh ) \
++	        && { if test -f $@; then exit 0; else break; fi; }; \
++	      exit 1;; \
++	  esac; \
++	done; \
++	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu plugins/spdyshark/Makefile'; \
++	$(am__cd) $(top_srcdir) && \
++	  $(AUTOMAKE) --gnu plugins/spdyshark/Makefile
++.PRECIOUS: Makefile
++Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
++	@case '$?' in \
++	  *config.status*) \
++	    cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh;; \
++	  *) \
++	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)'; \
++	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe);; \
++	esac;
++$(srcdir)/Makefile.common:
++
++$(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
++	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
++
++$(top_srcdir)/configure:  $(am__configure_deps)
++	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
++$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
++	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
++$(am__aclocal_m4_deps):
++
++install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
++	@$(NORMAL_INSTALL)
++	@list='$(plugin_LTLIBRARIES)'; test -n "$(plugindir)" || list=; \
++	list2=; for p in $$list; do \
++	  if test -f $$p; then \
++	    list2="$$list2 $$p"; \
++	  else :; fi; \
++	done; \
++	test -z "$$list2" || { \
++	  echo " $(MKDIR_P) '$(DESTDIR)$(plugindir)'"; \
++	  $(MKDIR_P) "$(DESTDIR)$(plugindir)" || exit 1; \
++	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(plugindir)'"; \
++	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(plugindir)"; \
++	}
++
++uninstall-pluginLTLIBRARIES:
++	@$(NORMAL_UNINSTALL)
++	@list='$(plugin_LTLIBRARIES)'; test -n "$(plugindir)" || list=; \
++	for p in $$list; do \
++	  $(am__strip_dir) \
++	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(DESTDIR)$(plugindir)/$$f'"; \
++	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(DESTDIR)$(plugindir)/$$f"; \
++	done
++
++clean-pluginLTLIBRARIES:
++	-test -z "$(plugin_LTLIBRARIES)" || rm -f $(plugin_LTLIBRARIES)
++	@list='$(plugin_LTLIBRARIES)'; \
++	locs=`for p in $$list; do echo $$p; done | \
++	      sed 's|^[^/]*$$|.|; s|/[^/]*$$||; s|$$|/so_locations|' | \
++	      sort -u`; \
++	test -z "$$locs" || { \
++	  echo rm -f $${locs}; \
++	  rm -f $${locs}; \
++	}
++
++spdy.la: $(spdy_la_OBJECTS) $(spdy_la_DEPENDENCIES) $(EXTRA_spdy_la_DEPENDENCIES) 
++	$(AM_V_CCLD)$(spdy_la_LINK) -rpath $(plugindir) $(spdy_la_OBJECTS) $(spdy_la_LIBADD) $(LIBS)
++
++mostlyclean-compile:
++	-rm -f *.$(OBJEXT)
++
++distclean-compile:
++	-rm -f *.tab.c
++
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/packet-spdy.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/plugin.Plo@am__quote@
++
++.c.o:
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
++@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ $<
++
++.c.obj:
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
++@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
++
++.c.lo:
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
++@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
++
++mostlyclean-libtool:
++	-rm -f *.lo
++
++clean-libtool:
++	-rm -rf .libs _libs
++
++ID: $(am__tagged_files)
++	$(am__define_uniq_tagged_files); mkid -fID $$unique
++tags: tags-am
++TAGS: tags
++
++tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
++	set x; \
++	here=`pwd`; \
++	$(am__define_uniq_tagged_files); \
++	shift; \
++	if test -z "$(ETAGS_ARGS)$$*$$unique"; then :; else \
++	  test -n "$$unique" || unique=$$empty_fix; \
++	  if test $$# -gt 0; then \
++	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
++	      "$$@" $$unique; \
++	  else \
++	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
++	      $$unique; \
++	  fi; \
++	fi
++ctags: ctags-am
++
++CTAGS: ctags
++ctags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
++	$(am__define_uniq_tagged_files); \
++	test -z "$(CTAGS_ARGS)$$unique" \
++	  || $(CTAGS) $(CTAGSFLAGS) $(AM_CTAGSFLAGS) $(CTAGS_ARGS) \
++	     $$unique
++
++GTAGS:
++	here=`$(am__cd) $(top_builddir) && pwd` \
++	  && $(am__cd) $(top_srcdir) \
++	  && gtags -i $(GTAGS_ARGS) "$$here"
++cscopelist: cscopelist-am
++
++cscopelist-am: $(am__tagged_files)
++	list='$(am__tagged_files)'; \
++	case "$(srcdir)" in \
++	  [\\/]* | ?:[\\/]*) sdir="$(srcdir)" ;; \
++	  *) sdir=$(subdir)/$(srcdir) ;; \
++	esac; \
++	for i in $$list; do \
++	  if test -f "$$i"; then \
++	    echo "$(subdir)/$$i"; \
++	  else \
++	    echo "$$sdir/$$i"; \
++	  fi; \
++	done >> $(top_builddir)/cscope.files
++
++distclean-tags:
++	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
++
++distdir: $(DISTFILES)
++	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
++	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
++	list='$(DISTFILES)'; \
++	  dist_files=`for file in $$list; do echo $$file; done | \
++	  sed -e "s|^$$srcdirstrip/||;t" \
++	      -e "s|^$$topsrcdirstrip/|$(top_builddir)/|;t"`; \
++	case $$dist_files in \
++	  */*) $(MKDIR_P) `echo "$$dist_files" | \
++			   sed '/\//!d;s|^|$(distdir)/|;s,/[^/]*$$,,' | \
++			   sort -u` ;; \
++	esac; \
++	for file in $$dist_files; do \
++	  if test -f $$file || test -d $$file; then d=.; else d=$(srcdir); fi; \
++	  if test -d $$d/$$file; then \
++	    dir=`echo "/$$file" | sed -e 's,/[^/]*$$,,'`; \
++	    if test -d "$(distdir)/$$file"; then \
++	      find "$(distdir)/$$file" -type d ! -perm -700 -exec chmod u+rwx {} \;; \
++	    fi; \
++	    if test -d $(srcdir)/$$file && test $$d != $(srcdir); then \
++	      cp -fpR $(srcdir)/$$file "$(distdir)$$dir" || exit 1; \
++	      find "$(distdir)/$$file" -type d ! -perm -700 -exec chmod u+rwx {} \;; \
++	    fi; \
++	    cp -fpR $$d/$$file "$(distdir)$$dir" || exit 1; \
++	  else \
++	    test -f "$(distdir)/$$file" \
++	    || cp -p $$d/$$file "$(distdir)/$$file" \
++	    || exit 1; \
++	  fi; \
++	done
++check-am: all-am
++check: check-am
++all-am: Makefile $(LTLIBRARIES)
++installdirs:
++	for dir in "$(DESTDIR)$(plugindir)"; do \
++	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
++	done
++install: install-am
++install-exec: install-exec-am
++install-data: install-data-am
++uninstall: uninstall-am
++
++install-am: all-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++
++installcheck: installcheck-am
++install-strip:
++	if test -z '$(STRIP)'; then \
++	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
++	    install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
++	      install; \
++	else \
++	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
++	    install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
++	    "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'" install; \
++	fi
++mostlyclean-generic:
++
++clean-generic:
++	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
++
++distclean-generic:
++	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
++	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
++
++maintainer-clean-generic:
++	@echo "This command is intended for maintainers to use"
++	@echo "it deletes files that may require special tools to rebuild."
++	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
++clean: clean-am
++
++clean-am: clean-generic clean-libtool clean-pluginLTLIBRARIES \
++	mostlyclean-am
++
++distclean: distclean-am
++	-rm -rf ./$(DEPDIR)
++	-rm -f Makefile
++distclean-am: clean-am distclean-compile distclean-generic \
++	distclean-tags
++
++dvi: dvi-am
++
++dvi-am:
++
++html: html-am
++
++html-am:
++
++info: info-am
++
++info-am:
++
++install-data-am: install-pluginLTLIBRARIES
++
++install-dvi: install-dvi-am
++
++install-dvi-am:
++
++install-exec-am:
++
++install-html: install-html-am
++
++install-html-am:
++
++install-info: install-info-am
++
++install-info-am:
++
++install-man:
++
++install-pdf: install-pdf-am
++
++install-pdf-am:
++
++install-ps: install-ps-am
++
++install-ps-am:
++
++installcheck-am:
++
++maintainer-clean: maintainer-clean-am
++	-rm -rf ./$(DEPDIR)
++	-rm -f Makefile
++maintainer-clean-am: distclean-am maintainer-clean-generic
++
++mostlyclean: mostlyclean-am
++
++mostlyclean-am: mostlyclean-compile mostlyclean-generic \
++	mostlyclean-libtool
++
++pdf: pdf-am
++
++pdf-am:
++
++ps: ps-am
++
++ps-am:
++
++uninstall-am: uninstall-pluginLTLIBRARIES
++
++.MAKE: install-am install-strip
++
++.PHONY: CTAGS GTAGS TAGS all all-am check check-am clean clean-generic \
++	clean-libtool clean-pluginLTLIBRARIES cscopelist-am ctags \
++	ctags-am distclean distclean-compile distclean-generic \
++	distclean-libtool distclean-tags distdir dvi dvi-am html \
++	html-am info info-am install install-am install-data \
++	install-data-am install-dvi install-dvi-am install-exec \
++	install-exec-am install-html install-html-am install-info \
++	install-info-am install-man install-pdf install-pdf-am \
++	install-pluginLTLIBRARIES install-ps install-ps-am \
++	install-strip installcheck installcheck-am installdirs \
++	maintainer-clean maintainer-clean-generic mostlyclean \
++	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
++	pdf pdf-am ps ps-am tags tags-am uninstall uninstall-am \
++	uninstall-pluginLTLIBRARIES
++
++
++# Dissector helpers.  They're included in the source files in this
++# directory, but they're not dissectors themselves, i.e. they're not
++# used to generate "register.c").
++#DISSECTOR_SUPPORT_SRC =
++
++#
++# Build plugin.c, which contains the plugin version[] string, a
++# function plugin_register() that calls the register routines for all
++# protocols, and a function plugin_reg_handoff() that calls the handoff
++# registration routines for all protocols.
++#
++# We do this by scanning sources.  If that turns out to be too slow,
++# maybe we could just require every .o file to have an register routine
++# of a given name (packet-aarp.o -> proto_register_aarp, etc.).
++#
++# Formatting conventions:  The name of the proto_register_* routines an
++# proto_reg_handoff_* routines must start in column zero, or must be
++# preceded only by "void " starting in column zero, and must not be
++# inside #if.
++#
++# DISSECTOR_SRC is assumed to have all the files that need to be scanned.
++#
++# For some unknown reason, having a big "for" loop in the Makefile
++# to scan all the files doesn't work with some "make"s; they seem to
++# pass only the first few names in the list to the shell, for some
++# reason.
++#
++# Therefore, we have a script to generate the plugin.c file.
++# The shell script runs slowly, as multiple greps and seds are run
++# for each input file; this is especially slow on Windows.  Therefore,
++# if Python is present (as indicated by PYTHON being defined), we run
++# a faster Python script to do that work instead.
++#
++# The first argument is the directory in which the source files live.
++# The second argument is "plugin", to indicate that we should build
++# a plugin.c file for a plugin.
++# All subsequent arguments are the files to scan.
++#
++plugin.c: $(DISSECTOR_SRC) $(top_srcdir)/tools/make-dissector-reg \
++    $(top_srcdir)/tools/make-dissector-reg.py
++	@if test -n "$(PYTHON)"; then \
++		echo Making plugin.c with python ; \
++		$(PYTHON) $(top_srcdir)/tools/make-dissector-reg.py $(srcdir) \
++		    plugin $(DISSECTOR_SRC) ; \
++	else \
++		echo Making plugin.c with shell script ; \
++		$(top_srcdir)/tools/make-dissector-reg $(srcdir) \
++		    $(plugin_src) plugin $(DISSECTOR_SRC) ; \
++	fi
++
++checkapi:
++	$(PERL) $(top_srcdir)/tools/checkAPIs.pl -g abort -g termoutput $(DISSECTOR_SRC) $(DISSECTOR_INCLUDES)
++
++# Tell versions [3.59,3.63) of GNU make to not export all variables.
++# Otherwise a system limit (for SysV at least) may be exceeded.
++.NOEXPORT:
+diff -ruN wireshark-1.10.5/plugins/spdyshark/Makefile.nmake wireshark-1.10.5-with-spdyshark/plugins/spdyshark/Makefile.nmake
+--- wireshark-1.10.5/plugins/spdyshark/Makefile.nmake	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/Makefile.nmake	2014-02-06 00:46:34.000000000 -0500
+@@ -0,0 +1,104 @@
++# Makefile.nmake
++# nmake file for Wireshark plugin
++#
++# $Id: Makefile.nmake 27579 2009-03-02 18:57:35Z gerald $
++#
++
++include ..\..\config.nmake
++include moduleinfo.nmake
++
++include Makefile.common
++
++CFLAGS=/WX /Zi /DHAVE_CONFIG_H /I../.. $(GLIB_CFLAGS) $(ZLIB_CFLAGS) \
++	/I$(PCAP_DIR)\include -D_U_="" $(LOCAL_CFLAGS)
++
++.c.obj::
++	$(CC) $(CFLAGS) -Fd.\ -c $<
++
++LDFLAGS = $(PLUGIN_LDFLAGS)
++
++!IFDEF ENABLE_LIBWIRESHARK
++LINK_PLUGIN_WITH=..\..\epan\libwireshark.lib $(ZLIB_LIBS)
++CFLAGS=/DHAVE_WIN32_LIBWIRESHARK_LIB /D_NEED_VAR_IMPORT_ $(CFLAGS)
++
++DISSECTOR_OBJECTS = $(DISSECTOR_SRC:.c=.obj)
++
++DISSECTOR_SUPPORT_OBJECTS = $(DISSECTOR_SUPPORT_SRC:.c=.obj)
++
++OBJECTS = $(DISSECTOR_OBJECTS) $(DISSECTOR_SUPPORT_OBJECTS) plugin.obj
++
++RESOURCE=$(PLUGIN_NAME).res
++
++all: $(PLUGIN_NAME).dll
++
++$(PLUGIN_NAME).rc : moduleinfo.nmake
++	sed -e s/@PLUGIN_NAME@/$(PLUGIN_NAME)/ \
++	-e s/@RC_MODULE_VERSION@/$(RC_MODULE_VERSION)/ \
++	-e s/@RC_VERSION@/$(RC_VERSION)/ \
++	-e s/@MODULE_VERSION@/$(MODULE_VERSION)/ \
++	-e s/@PACKAGE@/$(PACKAGE)/ \
++	-e s/@VERSION@/$(VERSION)/ \
++	-e s/@MSVC_VARIANT@/$(MSVC_VARIANT)/ \
++	< plugin.rc.in > $@
++
++$(PLUGIN_NAME).dll $(PLUGIN_NAME).exp $(PLUGIN_NAME).lib : $(OBJECTS) $(LINK_PLUGIN_WITH) $(RESOURCE)
++	link -dll /out:$(PLUGIN_NAME).dll $(LDFLAGS) $(OBJECTS) $(LINK_PLUGIN_WITH) \
++	$(GLIB_LIBS) $(RESOURCE)
++
++#
++# Build plugin.c, which contains the plugin version[] string, a
++# function plugin_register() that calls the register routines for all
++# protocols, and a function plugin_reg_handoff() that calls the handoff
++# registration routines for all protocols.
++#
++# We do this by scanning sources.  If that turns out to be too slow,
++# maybe we could just require every .o file to have an register routine
++# of a given name (packet-aarp.o -> proto_register_aarp, etc.).
++#
++# Formatting conventions:  The name of the proto_register_* routines an
++# proto_reg_handoff_* routines must start in column zero, or must be
++# preceded only by "void " starting in column zero, and must not be
++# inside #if.
++#
++# DISSECTOR_SRC is assumed to have all the files that need to be scanned.
++#
++# For some unknown reason, having a big "for" loop in the Makefile
++# to scan all the files doesn't work with some "make"s; they seem to
++# pass only the first few names in the list to the shell, for some
++# reason.
++#
++# Therefore, we have a script to generate the plugin.c file.
++# The shell script runs slowly, as multiple greps and seds are run
++# for each input file; this is especially slow on Windows.  Therefore,
++# if Python is present (as indicated by PYTHON being defined), we run
++# a faster Python script to do that work instead.
++#
++# The first argument is the directory in which the source files live.
++# The second argument is "plugin", to indicate that we should build
++# a plugin.c file for a plugin.
++# All subsequent arguments are the files to scan.
++#
++!IFDEF PYTHON
++plugin.c: $(DISSECTOR_SRC) moduleinfo.h ../../tools/make-dissector-reg.py
++	@echo Making plugin.c (using python)
++	@$(PYTHON) "../../tools/make-dissector-reg.py" . plugin $(DISSECTOR_SRC)
++!ELSE
++plugin.c: $(DISSECTOR_SRC) moduleinfo.h ../../tools/make-dissector-reg
++	@echo Making plugin.c (using sh)
++	@$(SH) ../../tools/make-dissector-reg . plugin $(DISSECTOR_SRC)
++!ENDIF
++
++!ENDIF
++
++clean:
++	rm -f $(OBJECTS) $(RESOURCE) plugin.c *.pdb \
++	    $(PLUGIN_NAME).dll $(PLUGIN_NAME).dll.manifest $(PLUGIN_NAME).lib \
++	    $(PLUGIN_NAME).exp $(PLUGIN_NAME).rc
++
++distclean: clean
++
++maintainer-clean: distclean
++
++checkapi:
++# TODO: Fix api's :)
++#	$(PERL) ../../tools/checkAPIs.pl -g abort -g termoutput $(DISSECTOR_SRC)
+diff -ruN wireshark-1.10.5/plugins/spdyshark/moduleinfo.h wireshark-1.10.5-with-spdyshark/plugins/spdyshark/moduleinfo.h
+--- wireshark-1.10.5/plugins/spdyshark/moduleinfo.h	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/moduleinfo.h	2014-02-06 00:46:34.000000000 -0500
+@@ -0,0 +1,16 @@
++/* Included *after* config.h, in order to re-define these macros */
++
++#ifdef PACKAGE
++#undef PACKAGE
++#endif
++
++/* Name of package */
++#define PACKAGE "spdy"
++
++
++#ifdef VERSION
++#undef VERSION
++#endif
++
++/* Version number of package */
++#define VERSION "0.2.2"
+diff -ruN wireshark-1.10.5/plugins/spdyshark/moduleinfo.nmake wireshark-1.10.5-with-spdyshark/plugins/spdyshark/moduleinfo.nmake
+--- wireshark-1.10.5/plugins/spdyshark/moduleinfo.nmake	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/moduleinfo.nmake	2014-02-06 00:46:34.000000000 -0500
+@@ -0,0 +1,28 @@
++#
++# $Id$
++#
++
++# The name
++PACKAGE=spdy
++
++# The version
++MODULE_VERSION_MAJOR=0
++MODULE_VERSION_MINOR=2
++MODULE_VERSION_MICRO=0
++MODULE_VERSION_EXTRA=0
++
++#
++# The RC_VERSION should be comma-separated, not dot-separated, 
++# as per Graham Bloice's message in
++#
++#	http://www.ethereal.com/lists/ethereal-dev/200303/msg00283.html
++#
++# "The RC_VERSION variable in config.nmake should be comma separated. 
++# This allows the resources to be built correctly and the version
++# number to be correctly displayed in the explorer properties dialog
++# for the executables, and XP's tooltip, rather than 0.0.0.0."
++#
++
++MODULE_VERSION=$(MODULE_VERSION_MAJOR).$(MODULE_VERSION_MINOR).$(MODULE_VERSION_MICRO).$(MODULE_VERSION_EXTRA)
++RC_MODULE_VERSION=$(MODULE_VERSION_MAJOR),$(MODULE_VERSION_MINOR),$(MODULE_VERSION_MICRO),$(MODULE_VERSION_EXTRA)
++
+diff -ruN wireshark-1.10.5/plugins/spdyshark/packet-spdy.c wireshark-1.10.5-with-spdyshark/plugins/spdyshark/packet-spdy.c
+--- wireshark-1.10.5/plugins/spdyshark/packet-spdy.c	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/packet-spdy.c	2014-02-06 01:07:06.000000000 -0500
+@@ -0,0 +1,2331 @@
++/* packet-spdy.c
++ * Routines for SPDY packet disassembly
++ * For now, the protocol spec can be found at
++ * http://dev.chromium.org/spdy/spdy-protocol
++ *
++ * Copyright 2010, Google Inc.
++ * Hasan Khalil <hkhalil@google.com>
++ * Chris Bentzel <cbentzel@google.com>
++ * Eric Shienbrood <ers@google.com>
++ *
++ * $Id$
++ *
++ * Wireshark - Network traffic analyzer
++ * By Gerald Combs <gerald@wireshark.org>
++ * Copyright 1998 Gerald Combs
++ *
++ * Originally based on packet-http.c
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License
++ * as published by the Free Software Foundation; either version 2
++ * of the License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++ */
++
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
++#include <stdio.h>
++#include <string.h>
++#include <ctype.h>
++
++#include <glib.h>
++#include <epan/conversation.h>
++#include <epan/packet.h>
++#include <epan/strutil.h>
++#include <epan/base64.h>
++#include <epan/emem.h>
++#include <epan/stats_tree.h>
++
++#include <epan/req_resp_hdrs.h>
++#include "packet-spdy.h"
++#include <epan/dissectors/packet-tcp.h>
++#include <epan/dissectors/packet-ssl.h>
++#include <epan/prefs.h>
++#include <epan/expert.h>
++#include <epan/uat.h>
++
++#define MIN_SPDY_VERSION 3
++
++/* The types of SPDY frames */
++#define SPDY_DATA           0
++#define SPDY_SYN_STREAM     1
++#define SPDY_SYN_REPLY      2
++#define SPDY_RST_STREAM     3
++#define SPDY_SETTINGS       4
++#define SPDY_PING           6
++#define SPDY_GOAWAY         7
++#define SPDY_HEADERS        8
++#define SPDY_WINDOW_UPDATE  9
++#define SPDY_CREDENTIAL    10
++#define SPDY_INVALID       11
++
++#define SPDY_FLAG_FIN  0x01
++#define SPDY_FLAG_UNIDIRECTIONAL 0x02
++#define SPDY_FLAG_SETTINGS_CLEAR_SETTINGS 0x01
++
++/* Flags for each setting in a SETTINGS frame. */
++#define SPDY_FLAG_SETTINGS_PERSIST_VALUE 0x01
++#define SPDY_FLAG_SETTINGS_PERSISTED 0x02
++
++#define TCP_PORT_SPDY 6121
++#define SSL_PORT_SPDY 443
++
++#ifdef UNUSED
++#elif defined(__GNUC__)
++# define UNUSED(x) UNUSED_ ## x __attribute__((unused))
++#elif defined(__LCLINT__)
++# define UNUSED(x) /*@unused@*/ x
++#else
++# define UNUSED(x) x
++#endif
++
++
++static const value_string frame_type_names[] = {
++    { SPDY_DATA,          "DATA" },
++    { SPDY_SYN_STREAM,    "SYN_STREAM" },
++    { SPDY_SYN_REPLY,     "SYN_REPLY" },
++    { SPDY_RST_STREAM,    "RST_STREAM" },
++    { SPDY_SETTINGS,      "SETTINGS" },
++    { SPDY_PING,          "PING" },
++    { SPDY_GOAWAY,        "GOAWAY" },
++    { SPDY_HEADERS,       "HEADERS" },
++    { SPDY_WINDOW_UPDATE, "WINDOW_UPDATE" },
++    { SPDY_CREDENTIAL,    "CREDENTIAL" },
++    { SPDY_INVALID,       "INVALID" },
++};
++
++static const value_string rst_stream_status_names[] = {
++  { 1,  "PROTOCOL_ERROR" },
++  { 2,  "INVALID_STREAM" },
++  { 3,  "REFUSED_STREAM" },
++  { 4,  "UNSUPPORTED_VERSION" },
++  { 5,  "CANCEL" },
++  { 6,  "INTERNAL_ERROR" },
++  { 7,  "FLOW_CONTROL_ERROR" },
++  { 8,  "STREAM_IN_USE" },
++  { 9,  "STREAM_ALREADY_CLOSED" },
++  { 10, "INVALID_CREDENTIALS" },
++  { 11, "FRAME_TOO_LARGE" },
++  { 12, "INVALID" },
++};
++
++static const value_string setting_id_names[] = {
++  { 1, "UPLOAD_BANDWIDTH" },
++  { 2, "DOWNLOAD_BANDWIDTH" },
++  { 3, "ROUND_TRIP_TIME" },
++  { 4, "MAX_CONCURRENT_STREAMS" },
++  { 5, "CURRENT_CWND" },
++  { 6, "DOWNLOAD_RETRANS_RATE" },
++  { 7, "INITIAL_WINDOW_SIZE" },
++};
++
++static const value_string goaway_status_names[] = {
++  { 0,  "OK" },
++  { 1,  "PROTOCOL_ERROR" },
++  { 11, "INTERNAL_ERROR" },
++};
++
++/*
++ * This structure will be tied to each SPDY frame and is used as an argument for
++ * dissect_spdy_*_payload() functions.
++ */
++typedef struct _spdy_control_frame_info_t {
++  gboolean control_bit;
++  guint16  version;
++  guint16  type;
++  guint8   flags;
++  guint32  length;  /* Actually only 24 bits. */
++} spdy_control_frame_info_t;
++
++/*
++ * This structure will be tied to each SPDY header frame.
++ * Only applies to frames containing headers: SYN_STREAM, SYN_REPLY, HEADERS
++ * Note that there may be multiple SPDY frames in one packet.
++ */
++typedef struct _spdy_header_info_t {
++    guint32 stream_id;
++    guint8 *header_block;
++    guint   header_block_len;
++    guint16 frame_type;
++} spdy_header_info_t;
++
++/*
++ * This structures keeps track of all the data frames
++ * associated with a stream, so that they can be
++ * reassembled into a single chunk.
++ */
++typedef struct _spdy_data_frame_t {
++    guint8 *data;
++    guint32 length;
++    guint32 framenum;
++} spdy_data_frame_t;
++
++typedef struct _spdy_stream_info_t {
++    gchar *content_type;
++    gchar *content_type_parameters;
++    gchar *content_encoding;
++    GSList *data_frames;
++    tvbuff_t *assembled_data;
++    guint num_data_frames;
++} spdy_stream_info_t;
++
++#include <epan/tap.h>
++
++/* Handles for metadata population. */
++
++static int spdy_tap = -1;
++static int spdy_eo_tap = -1;
++
++static int proto_spdy = -1;
++static int hf_spdy_data = -1;
++static int hf_spdy_control_bit = -1;
++static int hf_spdy_version = -1;
++static int hf_spdy_type = -1;
++static int hf_spdy_flags = -1;
++static int hf_spdy_flags_fin = -1;
++static int hf_spdy_flags_unidirectional = -1;
++static int hf_spdy_flags_clear_settings = -1;
++static int hf_spdy_flags_persist_value = -1;
++static int hf_spdy_flags_persisted = -1;
++static int hf_spdy_length = -1;
++static int hf_spdy_header_block = -1;
++static int hf_spdy_header = -1;
++static int hf_spdy_header_name = -1;
++static int hf_spdy_header_value = -1;
++static int hf_spdy_streamid = -1;
++static int hf_spdy_associated_streamid = -1;
++static int hf_spdy_priority = -1;
++static int hf_spdy_num_headers = -1;
++static int hf_spdy_rst_stream_status = -1;
++static int hf_spdy_num_settings = -1;
++static int hf_spdy_setting = -1;
++static int hf_spdy_setting_id = -1;
++static int hf_spdy_setting_value = -1;
++static int hf_spdy_ping_id = -1;
++static int hf_spdy_goaway_last_good_stream_id = -1;
++static int hf_spdy_goaway_status = -1;
++static int hf_spdy_window_update_delta = -1;
++
++static gint ett_spdy = -1;
++static gint ett_spdy_flags = -1;
++static gint ett_spdy_header_block = -1;
++static gint ett_spdy_header = -1;
++static gint ett_spdy_setting = -1;
++
++static gint ett_spdy_encoded_entity = -1;
++
++static dissector_handle_t data_handle;
++static dissector_handle_t media_handle;
++static dissector_handle_t spdy_handle;
++
++/* Stuff for generation/handling of fields for custom HTTP headers */
++typedef struct _header_field_t {
++        gchar* header_name;
++        gchar* header_desc;
++} header_field_t;
++
++static gboolean spdy_assemble_entity_bodies = TRUE;
++
++/*
++ * Decompression of zlib encoded entities.
++ */
++#ifdef HAVE_LIBZ
++static gboolean spdy_decompress_body = TRUE;
++static gboolean spdy_decompress_headers = TRUE;
++#else
++static gboolean spdy_decompress_body = FALSE;
++static gboolean spdy_decompress_headers = FALSE;
++#endif
++static gboolean spdy_debug = FALSE;
++
++static const char spdy_dictionary[] = {
++  0x00, 0x00, 0x00, 0x07, 0x6f, 0x70, 0x74, 0x69,  // - - - - o p t i
++  0x6f, 0x6e, 0x73, 0x00, 0x00, 0x00, 0x04, 0x68,  // o n s - - - - h
++  0x65, 0x61, 0x64, 0x00, 0x00, 0x00, 0x04, 0x70,  // e a d - - - - p
++  0x6f, 0x73, 0x74, 0x00, 0x00, 0x00, 0x03, 0x70,  // o s t - - - - p
++  0x75, 0x74, 0x00, 0x00, 0x00, 0x06, 0x64, 0x65,  // u t - - - - d e
++  0x6c, 0x65, 0x74, 0x65, 0x00, 0x00, 0x00, 0x05,  // l e t e - - - -
++  0x74, 0x72, 0x61, 0x63, 0x65, 0x00, 0x00, 0x00,  // t r a c e - - -
++  0x06, 0x61, 0x63, 0x63, 0x65, 0x70, 0x74, 0x00,  // - a c c e p t -
++  0x00, 0x00, 0x0e, 0x61, 0x63, 0x63, 0x65, 0x70,  // - - - a c c e p
++  0x74, 0x2d, 0x63, 0x68, 0x61, 0x72, 0x73, 0x65,  // t - c h a r s e
++  0x74, 0x00, 0x00, 0x00, 0x0f, 0x61, 0x63, 0x63,  // t - - - - a c c
++  0x65, 0x70, 0x74, 0x2d, 0x65, 0x6e, 0x63, 0x6f,  // e p t - e n c o
++  0x64, 0x69, 0x6e, 0x67, 0x00, 0x00, 0x00, 0x0f,  // d i n g - - - -
++  0x61, 0x63, 0x63, 0x65, 0x70, 0x74, 0x2d, 0x6c,  // a c c e p t - l
++  0x61, 0x6e, 0x67, 0x75, 0x61, 0x67, 0x65, 0x00,  // a n g u a g e -
++  0x00, 0x00, 0x0d, 0x61, 0x63, 0x63, 0x65, 0x70,  // - - - a c c e p
++  0x74, 0x2d, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x73,  // t - r a n g e s
++  0x00, 0x00, 0x00, 0x03, 0x61, 0x67, 0x65, 0x00,  // - - - - a g e -
++  0x00, 0x00, 0x05, 0x61, 0x6c, 0x6c, 0x6f, 0x77,  // - - - a l l o w
++  0x00, 0x00, 0x00, 0x0d, 0x61, 0x75, 0x74, 0x68,  // - - - - a u t h
++  0x6f, 0x72, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f,  // o r i z a t i o
++  0x6e, 0x00, 0x00, 0x00, 0x0d, 0x63, 0x61, 0x63,  // n - - - - c a c
++  0x68, 0x65, 0x2d, 0x63, 0x6f, 0x6e, 0x74, 0x72,  // h e - c o n t r
++  0x6f, 0x6c, 0x00, 0x00, 0x00, 0x0a, 0x63, 0x6f,  // o l - - - - c o
++  0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e,  // n n e c t i o n
++  0x00, 0x00, 0x00, 0x0c, 0x63, 0x6f, 0x6e, 0x74,  // - - - - c o n t
++  0x65, 0x6e, 0x74, 0x2d, 0x62, 0x61, 0x73, 0x65,  // e n t - b a s e
++  0x00, 0x00, 0x00, 0x10, 0x63, 0x6f, 0x6e, 0x74,  // - - - - c o n t
++  0x65, 0x6e, 0x74, 0x2d, 0x65, 0x6e, 0x63, 0x6f,  // e n t - e n c o
++  0x64, 0x69, 0x6e, 0x67, 0x00, 0x00, 0x00, 0x10,  // d i n g - - - -
++  0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x2d,  // c o n t e n t -
++  0x6c, 0x61, 0x6e, 0x67, 0x75, 0x61, 0x67, 0x65,  // l a n g u a g e
++  0x00, 0x00, 0x00, 0x0e, 0x63, 0x6f, 0x6e, 0x74,  // - - - - c o n t
++  0x65, 0x6e, 0x74, 0x2d, 0x6c, 0x65, 0x6e, 0x67,  // e n t - l e n g
++  0x74, 0x68, 0x00, 0x00, 0x00, 0x10, 0x63, 0x6f,  // t h - - - - c o
++  0x6e, 0x74, 0x65, 0x6e, 0x74, 0x2d, 0x6c, 0x6f,  // n t e n t - l o
++  0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x00, 0x00,  // c a t i o n - -
++  0x00, 0x0b, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e,  // - - c o n t e n
++  0x74, 0x2d, 0x6d, 0x64, 0x35, 0x00, 0x00, 0x00,  // t - m d 5 - - -
++  0x0d, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74,  // - c o n t e n t
++  0x2d, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x00, 0x00,  // - r a n g e - -
++  0x00, 0x0c, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e,  // - - c o n t e n
++  0x74, 0x2d, 0x74, 0x79, 0x70, 0x65, 0x00, 0x00,  // t - t y p e - -
++  0x00, 0x04, 0x64, 0x61, 0x74, 0x65, 0x00, 0x00,  // - - d a t e - -
++  0x00, 0x04, 0x65, 0x74, 0x61, 0x67, 0x00, 0x00,  // - - e t a g - -
++  0x00, 0x06, 0x65, 0x78, 0x70, 0x65, 0x63, 0x74,  // - - e x p e c t
++  0x00, 0x00, 0x00, 0x07, 0x65, 0x78, 0x70, 0x69,  // - - - - e x p i
++  0x72, 0x65, 0x73, 0x00, 0x00, 0x00, 0x04, 0x66,  // r e s - - - - f
++  0x72, 0x6f, 0x6d, 0x00, 0x00, 0x00, 0x04, 0x68,  // r o m - - - - h
++  0x6f, 0x73, 0x74, 0x00, 0x00, 0x00, 0x08, 0x69,  // o s t - - - - i
++  0x66, 0x2d, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x00,  // f - m a t c h -
++  0x00, 0x00, 0x11, 0x69, 0x66, 0x2d, 0x6d, 0x6f,  // - - - i f - m o
++  0x64, 0x69, 0x66, 0x69, 0x65, 0x64, 0x2d, 0x73,  // d i f i e d - s
++  0x69, 0x6e, 0x63, 0x65, 0x00, 0x00, 0x00, 0x0d,  // i n c e - - - -
++  0x69, 0x66, 0x2d, 0x6e, 0x6f, 0x6e, 0x65, 0x2d,  // i f - n o n e -
++  0x6d, 0x61, 0x74, 0x63, 0x68, 0x00, 0x00, 0x00,  // m a t c h - - -
++  0x08, 0x69, 0x66, 0x2d, 0x72, 0x61, 0x6e, 0x67,  // - i f - r a n g
++  0x65, 0x00, 0x00, 0x00, 0x13, 0x69, 0x66, 0x2d,  // e - - - - i f -
++  0x75, 0x6e, 0x6d, 0x6f, 0x64, 0x69, 0x66, 0x69,  // u n m o d i f i
++  0x65, 0x64, 0x2d, 0x73, 0x69, 0x6e, 0x63, 0x65,  // e d - s i n c e
++  0x00, 0x00, 0x00, 0x0d, 0x6c, 0x61, 0x73, 0x74,  // - - - - l a s t
++  0x2d, 0x6d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65,  // - m o d i f i e
++  0x64, 0x00, 0x00, 0x00, 0x08, 0x6c, 0x6f, 0x63,  // d - - - - l o c
++  0x61, 0x74, 0x69, 0x6f, 0x6e, 0x00, 0x00, 0x00,  // a t i o n - - -
++  0x0c, 0x6d, 0x61, 0x78, 0x2d, 0x66, 0x6f, 0x72,  // - m a x - f o r
++  0x77, 0x61, 0x72, 0x64, 0x73, 0x00, 0x00, 0x00,  // w a r d s - - -
++  0x06, 0x70, 0x72, 0x61, 0x67, 0x6d, 0x61, 0x00,  // - p r a g m a -
++  0x00, 0x00, 0x12, 0x70, 0x72, 0x6f, 0x78, 0x79,  // - - - p r o x y
++  0x2d, 0x61, 0x75, 0x74, 0x68, 0x65, 0x6e, 0x74,  // - a u t h e n t
++  0x69, 0x63, 0x61, 0x74, 0x65, 0x00, 0x00, 0x00,  // i c a t e - - -
++  0x13, 0x70, 0x72, 0x6f, 0x78, 0x79, 0x2d, 0x61,  // - p r o x y - a
++  0x75, 0x74, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x61,  // u t h o r i z a
++  0x74, 0x69, 0x6f, 0x6e, 0x00, 0x00, 0x00, 0x05,  // t i o n - - - -
++  0x72, 0x61, 0x6e, 0x67, 0x65, 0x00, 0x00, 0x00,  // r a n g e - - -
++  0x07, 0x72, 0x65, 0x66, 0x65, 0x72, 0x65, 0x72,  // - r e f e r e r
++  0x00, 0x00, 0x00, 0x0b, 0x72, 0x65, 0x74, 0x72,  // - - - - r e t r
++  0x79, 0x2d, 0x61, 0x66, 0x74, 0x65, 0x72, 0x00,  // y - a f t e r -
++  0x00, 0x00, 0x06, 0x73, 0x65, 0x72, 0x76, 0x65,  // - - - s e r v e
++  0x72, 0x00, 0x00, 0x00, 0x02, 0x74, 0x65, 0x00,  // r - - - - t e -
++  0x00, 0x00, 0x07, 0x74, 0x72, 0x61, 0x69, 0x6c,  // - - - t r a i l
++  0x65, 0x72, 0x00, 0x00, 0x00, 0x11, 0x74, 0x72,  // e r - - - - t r
++  0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x2d, 0x65,  // a n s f e r - e
++  0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67, 0x00,  // n c o d i n g -
++  0x00, 0x00, 0x07, 0x75, 0x70, 0x67, 0x72, 0x61,  // - - - u p g r a
++  0x64, 0x65, 0x00, 0x00, 0x00, 0x0a, 0x75, 0x73,  // d e - - - - u s
++  0x65, 0x72, 0x2d, 0x61, 0x67, 0x65, 0x6e, 0x74,  // e r - a g e n t
++  0x00, 0x00, 0x00, 0x04, 0x76, 0x61, 0x72, 0x79,  // - - - - v a r y
++  0x00, 0x00, 0x00, 0x03, 0x76, 0x69, 0x61, 0x00,  // - - - - v i a -
++  0x00, 0x00, 0x07, 0x77, 0x61, 0x72, 0x6e, 0x69,  // - - - w a r n i
++  0x6e, 0x67, 0x00, 0x00, 0x00, 0x10, 0x77, 0x77,  // n g - - - - w w
++  0x77, 0x2d, 0x61, 0x75, 0x74, 0x68, 0x65, 0x6e,  // w - a u t h e n
++  0x74, 0x69, 0x63, 0x61, 0x74, 0x65, 0x00, 0x00,  // t i c a t e - -
++  0x00, 0x06, 0x6d, 0x65, 0x74, 0x68, 0x6f, 0x64,  // - - m e t h o d
++  0x00, 0x00, 0x00, 0x03, 0x67, 0x65, 0x74, 0x00,  // - - - - g e t -
++  0x00, 0x00, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75,  // - - - s t a t u
++  0x73, 0x00, 0x00, 0x00, 0x06, 0x32, 0x30, 0x30,  // s - - - - 2 0 0
++  0x20, 0x4f, 0x4b, 0x00, 0x00, 0x00, 0x07, 0x76,  // - O K - - - - v
++  0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x00, 0x00,  // e r s i o n - -
++  0x00, 0x08, 0x48, 0x54, 0x54, 0x50, 0x2f, 0x31,  // - - H T T P - 1
++  0x2e, 0x31, 0x00, 0x00, 0x00, 0x03, 0x75, 0x72,  // - 1 - - - - u r
++  0x6c, 0x00, 0x00, 0x00, 0x06, 0x70, 0x75, 0x62,  // l - - - - p u b
++  0x6c, 0x69, 0x63, 0x00, 0x00, 0x00, 0x0a, 0x73,  // l i c - - - - s
++  0x65, 0x74, 0x2d, 0x63, 0x6f, 0x6f, 0x6b, 0x69,  // e t - c o o k i
++  0x65, 0x00, 0x00, 0x00, 0x0a, 0x6b, 0x65, 0x65,  // e - - - - k e e
++  0x70, 0x2d, 0x61, 0x6c, 0x69, 0x76, 0x65, 0x00,  // p - a l i v e -
++  0x00, 0x00, 0x06, 0x6f, 0x72, 0x69, 0x67, 0x69,  // - - - o r i g i
++  0x6e, 0x31, 0x30, 0x30, 0x31, 0x30, 0x31, 0x32,  // n 1 0 0 1 0 1 2
++  0x30, 0x31, 0x32, 0x30, 0x32, 0x32, 0x30, 0x35,  // 0 1 2 0 2 2 0 5
++  0x32, 0x30, 0x36, 0x33, 0x30, 0x30, 0x33, 0x30,  // 2 0 6 3 0 0 3 0
++  0x32, 0x33, 0x30, 0x33, 0x33, 0x30, 0x34, 0x33,  // 2 3 0 3 3 0 4 3
++  0x30, 0x35, 0x33, 0x30, 0x36, 0x33, 0x30, 0x37,  // 0 5 3 0 6 3 0 7
++  0x34, 0x30, 0x32, 0x34, 0x30, 0x35, 0x34, 0x30,  // 4 0 2 4 0 5 4 0
++  0x36, 0x34, 0x30, 0x37, 0x34, 0x30, 0x38, 0x34,  // 6 4 0 7 4 0 8 4
++  0x30, 0x39, 0x34, 0x31, 0x30, 0x34, 0x31, 0x31,  // 0 9 4 1 0 4 1 1
++  0x34, 0x31, 0x32, 0x34, 0x31, 0x33, 0x34, 0x31,  // 4 1 2 4 1 3 4 1
++  0x34, 0x34, 0x31, 0x35, 0x34, 0x31, 0x36, 0x34,  // 4 4 1 5 4 1 6 4
++  0x31, 0x37, 0x35, 0x30, 0x32, 0x35, 0x30, 0x34,  // 1 7 5 0 2 5 0 4
++  0x35, 0x30, 0x35, 0x32, 0x30, 0x33, 0x20, 0x4e,  // 5 0 5 2 0 3 - N
++  0x6f, 0x6e, 0x2d, 0x41, 0x75, 0x74, 0x68, 0x6f,  // o n - A u t h o
++  0x72, 0x69, 0x74, 0x61, 0x74, 0x69, 0x76, 0x65,  // r i t a t i v e
++  0x20, 0x49, 0x6e, 0x66, 0x6f, 0x72, 0x6d, 0x61,  // - I n f o r m a
++  0x74, 0x69, 0x6f, 0x6e, 0x32, 0x30, 0x34, 0x20,  // t i o n 2 0 4 -
++  0x4e, 0x6f, 0x20, 0x43, 0x6f, 0x6e, 0x74, 0x65,  // N o - C o n t e
++  0x6e, 0x74, 0x33, 0x30, 0x31, 0x20, 0x4d, 0x6f,  // n t 3 0 1 - M o
++  0x76, 0x65, 0x64, 0x20, 0x50, 0x65, 0x72, 0x6d,  // v e d - P e r m
++  0x61, 0x6e, 0x65, 0x6e, 0x74, 0x6c, 0x79, 0x34,  // a n e n t l y 4
++  0x30, 0x30, 0x20, 0x42, 0x61, 0x64, 0x20, 0x52,  // 0 0 - B a d - R
++  0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x34, 0x30,  // e q u e s t 4 0
++  0x31, 0x20, 0x55, 0x6e, 0x61, 0x75, 0x74, 0x68,  // 1 - U n a u t h
++  0x6f, 0x72, 0x69, 0x7a, 0x65, 0x64, 0x34, 0x30,  // o r i z e d 4 0
++  0x33, 0x20, 0x46, 0x6f, 0x72, 0x62, 0x69, 0x64,  // 3 - F o r b i d
++  0x64, 0x65, 0x6e, 0x34, 0x30, 0x34, 0x20, 0x4e,  // d e n 4 0 4 - N
++  0x6f, 0x74, 0x20, 0x46, 0x6f, 0x75, 0x6e, 0x64,  // o t - F o u n d
++  0x35, 0x30, 0x30, 0x20, 0x49, 0x6e, 0x74, 0x65,  // 5 0 0 - I n t e
++  0x72, 0x6e, 0x61, 0x6c, 0x20, 0x53, 0x65, 0x72,  // r n a l - S e r
++  0x76, 0x65, 0x72, 0x20, 0x45, 0x72, 0x72, 0x6f,  // v e r - E r r o
++  0x72, 0x35, 0x30, 0x31, 0x20, 0x4e, 0x6f, 0x74,  // r 5 0 1 - N o t
++  0x20, 0x49, 0x6d, 0x70, 0x6c, 0x65, 0x6d, 0x65,  // - I m p l e m e
++  0x6e, 0x74, 0x65, 0x64, 0x35, 0x30, 0x33, 0x20,  // n t e d 5 0 3 -
++  0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x20,  // S e r v i c e -
++  0x55, 0x6e, 0x61, 0x76, 0x61, 0x69, 0x6c, 0x61,  // U n a v a i l a
++  0x62, 0x6c, 0x65, 0x4a, 0x61, 0x6e, 0x20, 0x46,  // b l e J a n - F
++  0x65, 0x62, 0x20, 0x4d, 0x61, 0x72, 0x20, 0x41,  // e b - M a r - A
++  0x70, 0x72, 0x20, 0x4d, 0x61, 0x79, 0x20, 0x4a,  // p r - M a y - J
++  0x75, 0x6e, 0x20, 0x4a, 0x75, 0x6c, 0x20, 0x41,  // u n - J u l - A
++  0x75, 0x67, 0x20, 0x53, 0x65, 0x70, 0x74, 0x20,  // u g - S e p t -
++  0x4f, 0x63, 0x74, 0x20, 0x4e, 0x6f, 0x76, 0x20,  // O c t - N o v -
++  0x44, 0x65, 0x63, 0x20, 0x30, 0x30, 0x3a, 0x30,  // D e c - 0 0 - 0
++  0x30, 0x3a, 0x30, 0x30, 0x20, 0x4d, 0x6f, 0x6e,  // 0 - 0 0 - M o n
++  0x2c, 0x20, 0x54, 0x75, 0x65, 0x2c, 0x20, 0x57,  // - - T u e - - W
++  0x65, 0x64, 0x2c, 0x20, 0x54, 0x68, 0x75, 0x2c,  // e d - - T h u -
++  0x20, 0x46, 0x72, 0x69, 0x2c, 0x20, 0x53, 0x61,  // - F r i - - S a
++  0x74, 0x2c, 0x20, 0x53, 0x75, 0x6e, 0x2c, 0x20,  // t - - S u n - -
++  0x47, 0x4d, 0x54, 0x63, 0x68, 0x75, 0x6e, 0x6b,  // G M T c h u n k
++  0x65, 0x64, 0x2c, 0x74, 0x65, 0x78, 0x74, 0x2f,  // e d - t e x t -
++  0x68, 0x74, 0x6d, 0x6c, 0x2c, 0x69, 0x6d, 0x61,  // h t m l - i m a
++  0x67, 0x65, 0x2f, 0x70, 0x6e, 0x67, 0x2c, 0x69,  // g e - p n g - i
++  0x6d, 0x61, 0x67, 0x65, 0x2f, 0x6a, 0x70, 0x67,  // m a g e - j p g
++  0x2c, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x2f, 0x67,  // - i m a g e - g
++  0x69, 0x66, 0x2c, 0x61, 0x70, 0x70, 0x6c, 0x69,  // i f - a p p l i
++  0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x78,  // c a t i o n - x
++  0x6d, 0x6c, 0x2c, 0x61, 0x70, 0x70, 0x6c, 0x69,  // m l - a p p l i
++  0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x78,  // c a t i o n - x
++  0x68, 0x74, 0x6d, 0x6c, 0x2b, 0x78, 0x6d, 0x6c,  // h t m l - x m l
++  0x2c, 0x74, 0x65, 0x78, 0x74, 0x2f, 0x70, 0x6c,  // - t e x t - p l
++  0x61, 0x69, 0x6e, 0x2c, 0x74, 0x65, 0x78, 0x74,  // a i n - t e x t
++  0x2f, 0x6a, 0x61, 0x76, 0x61, 0x73, 0x63, 0x72,  // - j a v a s c r
++  0x69, 0x70, 0x74, 0x2c, 0x70, 0x75, 0x62, 0x6c,  // i p t - p u b l
++  0x69, 0x63, 0x70, 0x72, 0x69, 0x76, 0x61, 0x74,  // i c p r i v a t
++  0x65, 0x6d, 0x61, 0x78, 0x2d, 0x61, 0x67, 0x65,  // e m a x - a g e
++  0x3d, 0x67, 0x7a, 0x69, 0x70, 0x2c, 0x64, 0x65,  // - g z i p - d e
++  0x66, 0x6c, 0x61, 0x74, 0x65, 0x2c, 0x73, 0x64,  // f l a t e - s d
++  0x63, 0x68, 0x63, 0x68, 0x61, 0x72, 0x73, 0x65,  // c h c h a r s e
++  0x74, 0x3d, 0x75, 0x74, 0x66, 0x2d, 0x38, 0x63,  // t - u t f - 8 c
++  0x68, 0x61, 0x72, 0x73, 0x65, 0x74, 0x3d, 0x69,  // h a r s e t - i
++  0x73, 0x6f, 0x2d, 0x38, 0x38, 0x35, 0x39, 0x2d,  // s o - 8 8 5 9 -
++  0x31, 0x2c, 0x75, 0x74, 0x66, 0x2d, 0x2c, 0x2a,  // 1 - u t f - - -
++  0x2c, 0x65, 0x6e, 0x71, 0x3d, 0x30, 0x2e         // - e n q - 0 -
++};
++
++static void reset_decompressors(void) {
++  if (spdy_debug) printf("Should reset SPDY decompressors\n");
++}
++
++/*
++ * Returns conversation data for a given packet. If conversation data can't be
++ * found, creates and returns new conversation data.
++ */
++static spdy_conv_t * get_or_create_spdy_conversation_data(packet_info *pinfo) {
++  conversation_t  *conversation;
++  spdy_conv_t *conv_data;
++  int retcode;
++
++  conversation = find_conversation(pinfo->fd->num,
++                                   &pinfo->src,
++                                   &pinfo->dst,
++                                   pinfo->ptype,
++                                   pinfo->srcport,
++                                   pinfo->destport,
++                                   0);
++
++  if (!conversation)  /* Conversation does not exist yet - create it */
++    conversation = conversation_new(pinfo->fd->num,
++                                    &pinfo->src,
++                                    &pinfo->dst,
++                                    pinfo->ptype,
++                                    pinfo->srcport,
++                                    pinfo->destport,
++                                    0);
++
++  /* Retrieve information from conversation */
++  conv_data = conversation_get_proto_data(conversation, proto_spdy);
++  if (!conv_data) {
++    /* Set up the conversation structure itself */
++    conv_data = se_alloc0(sizeof(spdy_conv_t));
++
++    conv_data->streams = NULL;
++    if (spdy_decompress_headers) {
++      conv_data->rqst_decompressor = se_alloc0(sizeof(z_stream));
++      conv_data->rply_decompressor = se_alloc0(sizeof(z_stream));
++      retcode = inflateInit(conv_data->rqst_decompressor);
++      if (retcode == Z_OK) {
++        retcode = inflateInit(conv_data->rply_decompressor);
++      }
++      if (retcode != Z_OK) {
++        printf("frame #%d: inflateInit() failed: %d\n",
++               pinfo->fd->num, retcode);
++      }
++      conv_data->dictionary_id = adler32(0L, Z_NULL, 0);
++      conv_data->dictionary_id = adler32(conv_data->dictionary_id,
++                                         spdy_dictionary,
++                                         sizeof(spdy_dictionary));
++    }
++
++    conversation_add_proto_data(conversation, proto_spdy, conv_data);
++    register_postseq_cleanup_routine(reset_decompressors);
++  }
++
++  return conv_data;
++}
++
++/*
++ * Retains state on a given stream.
++ */
++static void spdy_save_stream_info(spdy_conv_t *conv_data,
++                                  guint32 stream_id,
++                                  gchar *content_type,
++                                  gchar *content_type_params,
++                                  gchar *content_encoding) {
++  spdy_stream_info_t *si;
++
++  if (conv_data->streams == NULL) {
++    conv_data->streams = g_array_new(FALSE, TRUE, sizeof(spdy_stream_info_t *));
++  }
++  if (stream_id < conv_data->streams->len) {
++    DISSECTOR_ASSERT(g_array_index(conv_data->streams, spdy_stream_info_t*, stream_id) == NULL);
++  } else {
++    g_array_set_size(conv_data->streams, stream_id+1);
++  }
++  si = se_alloc(sizeof(spdy_stream_info_t));
++  si->content_type = content_type;
++  si->content_type_parameters = content_type_params;
++  si->content_encoding = content_encoding;
++  si->data_frames = NULL;
++  si->num_data_frames = 0;
++  si->assembled_data = NULL;
++  g_array_index(conv_data->streams, spdy_stream_info_t*, stream_id) = si;
++  if (spdy_debug) {
++    printf("Saved stream info for ID %u, content type %s\n",
++           stream_id, content_type);
++  }
++}
++
++/*
++ * Retrieves previously saved state on a given stream.
++ */
++static spdy_stream_info_t* spdy_get_stream_info(spdy_conv_t *conv_data,
++                                                guint32 stream_id) {
++    if (conv_data->streams == NULL || stream_id >= conv_data->streams->len) {
++      return NULL;
++    } else {
++      return g_array_index(conv_data->streams, spdy_stream_info_t*, stream_id);
++    }
++}
++
++/*
++ * Adds a data chunk to a given SPDY converstaion/stream.
++ */
++static void spdy_add_data_chunk(spdy_conv_t *conv_data,
++                                guint32 stream_id,
++                                guint32 frame,
++                                guint8 *data,
++                                guint32 length) {
++  spdy_stream_info_t *si = spdy_get_stream_info(conv_data, stream_id);
++
++  if (si == NULL) {
++    if (spdy_debug) {
++      printf("No stream_info found for stream %d\n", stream_id);
++    }
++  } else {
++    spdy_data_frame_t *df = g_malloc(sizeof(spdy_data_frame_t));
++    df->data = data;
++    df->length = length;
++    df->framenum = frame;
++    si->data_frames = g_slist_append(si->data_frames, df);
++    ++si->num_data_frames;
++    if (spdy_debug) {
++      printf("Saved %u bytes of data for stream %u frame %u\n",
++             length, stream_id, df->framenum);
++    }
++  }
++}
++
++/*
++ * Increment the count of DATA frames found on a given stream.
++ */
++static void spdy_increment_data_chunk_count(spdy_conv_t *conv_data,
++                                            guint32 stream_id) {
++  spdy_stream_info_t *si = spdy_get_stream_info(conv_data, stream_id);
++  if (si != NULL) {
++    ++si->num_data_frames;
++  }
++}
++
++/*
++ * Return the number of data frames saved so far for the specified stream.
++ */
++static guint spdy_get_num_data_frames(spdy_conv_t *conv_data,
++                                      guint32 stream_id) {
++  spdy_stream_info_t *si = spdy_get_stream_info(conv_data, stream_id);
++
++  return si == NULL ? 0 : si->num_data_frames;
++}
++
++/*
++ * Reassembles DATA frames for a given stream into one tvb.
++ */
++static spdy_stream_info_t* spdy_assemble_data_frames(spdy_conv_t *conv_data,
++                                                     guint32 stream_id) {
++  spdy_stream_info_t *si = spdy_get_stream_info(conv_data, stream_id);
++  tvbuff_t *tvb;
++
++  if (si == NULL) {
++    return NULL;
++  }
++
++  /*
++   * Compute the total amount of data and concatenate the
++   * data chunks, if it hasn't already been done.
++   */
++  if (si->assembled_data == NULL) {
++    spdy_data_frame_t *df;
++    guint8 *data;
++    guint32 datalen;
++    guint32 offset;
++    guint32 framenum;
++    GSList *dflist = si->data_frames;
++    if (dflist == NULL) {
++      return si;
++    }
++    datalen = 0;
++    /*
++     * It'd be nice to use a composite tvbuff here, but since
++     * only a real-data tvbuff can be the child of another
++     * tvb, we can't. It would be nice if this limitation
++     * could be fixed.
++     */
++    while (dflist != NULL) {
++      df = dflist->data;
++      datalen += df->length;
++      dflist = g_slist_next(dflist);
++    }
++    if (datalen != 0) {
++      data = se_alloc(datalen);
++      dflist = si->data_frames;
++      offset = 0;
++      framenum = 0;
++      while (dflist != NULL) {
++        df = dflist->data;
++        memcpy(data+offset, df->data, df->length);
++        offset += df->length;
++        dflist = g_slist_next(dflist);
++      }
++      tvb = tvb_new_real_data(data, datalen, datalen);
++      si->assembled_data = tvb;
++    }
++  }
++  return si;
++}
++
++/*
++ * Cleans up data frames accounted for by a given stream.
++ */
++static void spdy_discard_data_frames(spdy_stream_info_t *si) {
++  GSList *dflist = si->data_frames;
++  spdy_data_frame_t *df;
++
++  if (dflist == NULL) {
++    return;
++  }
++  while (dflist != NULL) {
++    df = dflist->data;
++    if (df->data != NULL) {
++      g_free(df->data);
++      df->data = NULL;
++    }
++    dflist = g_slist_next(dflist);
++  }
++  /*
++  TODO(hkhalil): Why was this commented out?
++  g_slist_free(si->data_frames);
++  si->data_frames = NULL;
++  */
++}
++
++/* TODO(cbentzel): tvb_child_uncompress should be exported by wireshark. */
++static tvbuff_t* spdy_tvb_child_uncompress(tvbuff_t *parent _U_, tvbuff_t *tvb,
++                                           int offset, int comprlen) {
++  tvbuff_t *new_tvb = tvb_uncompress(tvb, offset, comprlen);
++  if (new_tvb) {
++    tvb_set_child_real_data_tvbuff (parent, new_tvb);
++  }
++  return new_tvb;
++}
++
++/*
++ * Adds control bit details to proto tree.
++ */
++static void dissect_spdy_control_bit(tvbuff_t *tvb,
++                                     int offset,
++                                     proto_tree *frame_tree) {
++  if (frame_tree) {
++    proto_tree_add_bits_item(frame_tree,
++                             hf_spdy_control_bit,
++                             tvb,
++                             offset * 8,
++                             1,
++                             ENC_NA);
++  }
++}
++
++static guint32 get_spdy_stream_id(tvbuff_t* tvb, int offset) {
++  return tvb_get_bits32(tvb, (offset * 8) + 1, 31, ENC_BIG_ENDIAN);
++}
++
++/*
++ * Same as dissect_spdy_stream_id below, except with explicit field index.
++ */
++static void dissect_spdy_stream_id_field(tvbuff_t *tvb,
++                                         int offset,
++                                         packet_info *pinfo,
++                                         proto_tree *frame_tree,
++                                         const int hfindex) {
++  guint32 stream_id = get_spdy_stream_id(tvb, offset);
++  /* Add stream id to info column. */
++  if (hfindex == hf_spdy_streamid) {
++    col_append_fstr(pinfo->cinfo, COL_INFO, " Stream=%u", stream_id);
++  }
++
++  /* Add stream id to tree. */
++  if (frame_tree) {
++    proto_tree_add_item(frame_tree,
++                        hfindex,
++                        tvb,
++                        offset,
++                        4,
++                        ENC_BIG_ENDIAN);
++    if (hfindex == hf_spdy_streamid) {
++      proto_item_append_text(frame_tree, ", Stream: %u", stream_id);
++    }
++  }
++}
++
++/*
++ * Adds stream ID details to proto tree.
++ */
++static void dissect_spdy_stream_id(tvbuff_t *tvb,
++                                   int offset,
++                                   packet_info *pinfo,
++                                   proto_tree *frame_tree) {
++  dissect_spdy_stream_id_field(tvb, offset,pinfo, frame_tree, hf_spdy_streamid);
++}
++
++/*
++ * Adds flag details to proto tree.
++ */
++static void dissect_spdy_flags(tvbuff_t *tvb,
++                               int offset,
++                               proto_tree *frame_tree,
++                               const spdy_control_frame_info_t *frame) {
++  proto_item *flags_ti;
++  proto_tree *flags_tree;
++
++  /* Nothing to do if we have no tree to work on. */
++  if (frame_tree == NULL) {
++    return;
++  }
++
++  /* Create flags substree. */
++  flags_ti = proto_tree_add_item(frame_tree,
++                                 hf_spdy_flags,
++                                 tvb,
++                                 offset,
++                                 1,
++                                 ENC_BIG_ENDIAN);
++  flags_tree = proto_item_add_subtree(flags_ti, ett_spdy_flags);
++
++  /* Add FIN flag for appropriate frames. */
++  if (frame->type == SPDY_DATA ||
++      frame->type == SPDY_SYN_STREAM ||
++      frame->type == SPDY_SYN_REPLY ||
++      frame->type == SPDY_HEADERS) {
++    /* Add FIN flag. */
++    proto_tree_add_item(flags_tree,
++                        hf_spdy_flags_fin,
++                        tvb,
++                        offset,
++                        1,
++                        ENC_BIG_ENDIAN);
++    if (frame->flags & SPDY_FLAG_FIN) {
++      proto_item_append_text(frame_tree, " (FIN)");
++      proto_item_append_text(flags_ti, " (FIN)");
++    }
++  }
++
++  /* Add UNIDIRECTIONAL flag, only applicable for SYN_STREAM. */
++  if (frame->type == SPDY_SYN_STREAM) {
++    proto_tree_add_item(flags_tree,
++                        hf_spdy_flags_unidirectional,
++                        tvb,
++                        offset,
++                        1,
++                        ENC_BIG_ENDIAN);
++    if (frame->flags & SPDY_FLAG_UNIDIRECTIONAL) {
++      proto_item_append_text(flags_ti, " (UNIDIRECTIONAL)");
++    }
++  }
++
++  /* Add CLEAR_SETTINGS flag, only applicable for SETTINGS. */
++  if (frame->type == SPDY_SETTINGS) {
++    proto_tree_add_item(flags_tree,
++                        hf_spdy_flags_clear_settings,
++                        tvb,
++                        offset,
++                        1,
++                        ENC_BIG_ENDIAN);
++    if (frame->flags & SPDY_FLAG_SETTINGS_CLEAR_SETTINGS) {
++      proto_item_append_text(flags_ti, " (CLEAR)");
++    }
++  }
++}
++
++/*
++ * Performs DATA frame payload dissection.
++ */
++static int dissect_spdy_data_payload(tvbuff_t *tvb,
++                                     int offset,
++                                     packet_info *pinfo,
++                                     proto_tree *top_level_tree,
++                                     proto_tree *spdy_tree,
++                                     proto_item *spdy_proto,
++                                     spdy_conv_t *conv_data,
++                                     guint32 stream_id,
++                                     const spdy_control_frame_info_t *frame) {
++  dissector_table_t media_type_subdissector_table;
++  dissector_table_t port_subdissector_table;
++  dissector_handle_t handle;
++  guint num_data_frames;
++  gboolean dissected;
++
++  col_add_fstr(pinfo->cinfo, COL_INFO, "DATA Stream=%d Length=%d",
++               stream_id, frame->length);
++
++  if (spdy_tree) {
++    /* Add frame description. */
++    proto_item_append_text(spdy_proto, ", Stream: %d, Length: %d",
++                           stream_id,
++                           frame->length);
++
++    /* Add data. */
++    proto_tree_add_item(spdy_tree,
++                        hf_spdy_data,
++                        tvb, offset,
++                        frame->length,
++                        ENC_NA);
++  }
++
++  num_data_frames = spdy_get_num_data_frames(conv_data, stream_id);
++  if (frame->length != 0 || num_data_frames != 0) {
++    /*
++     * There's stuff left over; process it.
++     */
++    tvbuff_t *next_tvb = NULL;
++    tvbuff_t    *data_tvb = NULL;
++    spdy_stream_info_t *si = NULL;
++    void *save_private_data = NULL;
++    guint8 *copied_data;
++    gboolean private_data_changed = FALSE;
++    gboolean is_single_chunk = FALSE;
++    gboolean have_entire_body;
++
++    /*
++     * Create a tvbuff for the payload.
++     */
++    if (frame->length != 0) {
++      next_tvb = tvb_new_subset(tvb, offset, frame->length, frame->length);
++      is_single_chunk = num_data_frames == 0 &&
++          (frame->flags & SPDY_FLAG_FIN) != 0;
++      if (!pinfo->fd->flags.visited) {
++        if (!is_single_chunk) {
++          if (spdy_assemble_entity_bodies) {
++            copied_data = tvb_memdup(next_tvb, 0, frame->length);
++            spdy_add_data_chunk(conv_data,
++                                stream_id,
++                                pinfo->fd->num,
++                                copied_data,
++                                frame->length);
++          } else {
++            spdy_increment_data_chunk_count(conv_data, stream_id);
++          }
++        }
++      }
++    } else {
++      is_single_chunk = (num_data_frames == 1);
++    }
++
++    if (!(frame->flags & SPDY_FLAG_FIN)) {
++      col_set_fence(pinfo->cinfo, COL_INFO);
++      col_add_fstr(pinfo->cinfo, COL_INFO, " (partial entity)");
++      proto_item_append_text(spdy_proto, " (partial entity body)");
++      /* would like the proto item to say */
++      /* " (entity body fragment N of M)" */
++      goto body_dissected;
++    }
++    have_entire_body = is_single_chunk;
++    /*
++     * On seeing the last data frame in a stream, we can
++     * reassemble the frames into one data block.
++     */
++    si = spdy_assemble_data_frames(conv_data, stream_id);
++    if (si == NULL) {
++      goto body_dissected;
++    }
++    data_tvb = si->assembled_data;
++    if (spdy_assemble_entity_bodies) {
++      have_entire_body = TRUE;
++    }
++
++    if (!have_entire_body) {
++      goto body_dissected;
++    }
++
++    if (data_tvb == NULL) {
++      data_tvb = next_tvb;
++    } else {
++      add_new_data_source(pinfo, data_tvb, "Assembled entity body");
++    }
++
++    if (have_entire_body && si->content_encoding != NULL &&
++        g_ascii_strcasecmp(si->content_encoding, "identity") != 0) {
++      /*
++       * We currently can't handle, for example, "compress";
++       * just handle them as data for now.
++       *
++       * After July 7, 2004 the LZW patent expires, so support
++       * might be added then.  However, I don't think that
++       * anybody ever really implemented "compress", due to
++       * the aforementioned patent.
++       */
++      tvbuff_t *uncomp_tvb = NULL;
++      proto_item *e_ti = NULL;
++      proto_item *ce_ti = NULL;
++      proto_tree *e_tree = NULL;
++
++      if (spdy_decompress_body &&
++          (g_ascii_strcasecmp(si->content_encoding, "gzip") == 0 ||
++           g_ascii_strcasecmp(si->content_encoding, "deflate") == 0)) {
++        uncomp_tvb = spdy_tvb_child_uncompress(tvb, data_tvb, 0,
++                                               tvb_length(data_tvb));
++      }
++      /*
++       * Add the encoded entity to the protocol tree
++       */
++      e_ti = proto_tree_add_text(top_level_tree, data_tvb,
++                                 0, tvb_length(data_tvb),
++                                 "Content-encoded entity body (%s): %u bytes",
++                                 si->content_encoding,
++                                 tvb_length(data_tvb));
++      e_tree = proto_item_add_subtree(e_ti, ett_spdy_encoded_entity);
++      if (si->num_data_frames > 1) {
++        GSList *dflist;
++        spdy_data_frame_t *df;
++        guint32 framenum;
++        ce_ti = proto_tree_add_text(e_tree, data_tvb, 0,
++                                    tvb_length(data_tvb),
++                                    "Assembled from %d frames in packet(s)",
++                                    si->num_data_frames);
++        dflist = si->data_frames;
++        framenum = 0;
++        while (dflist != NULL) {
++          df = dflist->data;
++          if (framenum != df->framenum) {
++            proto_item_append_text(ce_ti, " #%u", df->framenum);
++            framenum = df->framenum;
++          }
++          dflist = g_slist_next(dflist);
++        }
++      }
++
++      if (uncomp_tvb != NULL) {
++        /*
++         * Decompression worked
++         */
++
++        /* XXX - Don't free this, since it's possible
++         * that the data was only partially
++         * decompressed, such as when desegmentation
++         * isn't enabled.
++         *
++         tvb_free(next_tvb);
++         */
++        proto_item_append_text(e_ti, " -> %u bytes", tvb_length(uncomp_tvb));
++        data_tvb = uncomp_tvb;
++        add_new_data_source(pinfo, data_tvb, "Uncompressed entity body");
++      } else {
++        if (spdy_decompress_body) {
++          proto_item_append_text(e_ti, " [Error: Decompression failed]");
++        }
++        call_dissector(data_handle, data_tvb, pinfo, e_tree);
++
++        goto body_dissected;
++      }
++    }
++    if (si != NULL) {
++      spdy_discard_data_frames(si);
++    }
++    /*
++     * Do subdissector checks.
++     *
++     * First, check whether some subdissector asked that they
++     * be called if something was on some particular port.
++     */
++
++    port_subdissector_table = find_dissector_table("http.port");
++    media_type_subdissector_table = find_dissector_table("media_type");
++    if (have_entire_body && port_subdissector_table != NULL) {
++      handle = dissector_get_uint_handle(port_subdissector_table,
++                                         pinfo->match_port);
++    } else {
++      handle = NULL;
++    }
++    if (handle == NULL && have_entire_body && si->content_type != NULL &&
++      media_type_subdissector_table != NULL) {
++      /*
++       * We didn't find any subdissector that
++       * registered for the port, and we have a
++       * Content-Type value.  Is there any subdissector
++       * for that content type?
++       */
++      save_private_data = pinfo->private_data;
++      private_data_changed = TRUE;
++
++      if (si->content_type_parameters) {
++        pinfo->private_data = ep_strdup(si->content_type_parameters);
++      } else {
++        pinfo->private_data = NULL;
++      }
++      /*
++       * Calling the string handle for the media type
++       * dissector table will set pinfo->match_string
++       * to si->content_type for us.
++       */
++      pinfo->match_string = si->content_type;
++      handle = dissector_get_string_handle(media_type_subdissector_table,
++                                           si->content_type);
++    }
++    if (handle != NULL) {
++      /*
++       * We have a subdissector - call it.
++       */
++      dissected = call_dissector(handle, data_tvb, pinfo, top_level_tree);
++    } else {
++      dissected = FALSE;
++    }
++
++    if (!dissected && have_entire_body && si->content_type != NULL) {
++      /*
++       * Calling the default media handle if there is a content-type that
++       * wasn't handled above.
++       */
++      call_dissector(media_handle, next_tvb, pinfo, top_level_tree);
++    } else {
++      /* Call the default data dissector */
++      call_dissector(data_handle, next_tvb, pinfo, top_level_tree);
++    }
++
++body_dissected:
++    /*
++     * Do *not* attempt at freeing the private data;
++     * it may be in use by subdissectors.
++     */
++    if (private_data_changed) { /*restore even NULL value*/
++        pinfo->private_data = save_private_data;
++    }
++    /*
++     * We've processed frame->length bytes worth of data
++     * (which may be no data at all); advance the
++     * offset past whatever data we've processed.
++     */
++  }
++  return frame->length;
++}
++
++/*
++ * Performs header decompression.
++ *
++ * The returned buffer is automatically scoped to the lifetime of the capture
++ * (via se_memdup()).
++ */
++static guint8* spdy_decompress_header_block(tvbuff_t *tvb,
++                                            z_streamp decomp,
++                                            guint32 dictionary_id,
++                                            int offset,
++                                            guint32 length,
++                                            guint *uncomp_length) {
++  int retcode;
++  size_t bufsize = 16384;
++  const guint8 *hptr = tvb_get_ptr(tvb, offset, length);
++  guint8 *uncomp_block = ep_alloc(bufsize);
++  decomp->next_in = (Bytef *)hptr;
++  decomp->avail_in = length;
++  decomp->next_out = uncomp_block;
++  decomp->avail_out = bufsize;
++  retcode = inflate(decomp, Z_SYNC_FLUSH);
++  if (retcode == Z_NEED_DICT) {
++    if (decomp->adler != dictionary_id) {
++      printf("decompressor wants dictionary %#x, but we have %#x\n",
++             (guint)decomp->adler, dictionary_id);
++    } else {
++      retcode = inflateSetDictionary(decomp,
++                                     spdy_dictionary,
++                                     sizeof(spdy_dictionary));
++      if (retcode == Z_OK) {
++        retcode = inflate(decomp, Z_SYNC_FLUSH);
++      }
++    }
++  }
++
++  /* Handle errors. */
++  if (retcode != Z_OK) {
++    return NULL;
++  }
++
++  /* Handle successful inflation. */
++  *uncomp_length = bufsize - decomp->avail_out;
++  if (decomp->avail_in != 0) {
++    if (spdy_debug) {
++      printf("Inflation SUCCEEDED. Uncompressed size=%d but there were %d "
++             "input bytes left over\n", *uncomp_length, decomp->avail_in);
++    }
++  }
++  return se_memdup(uncomp_block, *uncomp_length);
++}
++
++/* TODO(cbentzel): Change wireshark to export p_remove_proto_data, rather
++ * than duplicating code here. */
++typedef struct _spdy_frame_proto_data {
++  int proto;
++  void *proto_data;
++} spdy_frame_proto_data;
++
++static gint spdy_p_compare(gconstpointer a, gconstpointer b) {
++  const spdy_frame_proto_data *ap = (const spdy_frame_proto_data *)a;
++  const spdy_frame_proto_data *bp = (const spdy_frame_proto_data *)b;
++
++  if (ap -> proto > bp -> proto) {
++    return 1;
++  } else if (ap -> proto == bp -> proto) {
++    return 0;
++  } else {
++    return -1;
++  }
++}
++
++static void spdy_p_remove_proto_data(frame_data *fd, int proto) {
++  spdy_frame_proto_data temp;
++  GSList *item;
++
++  temp.proto = proto;
++  temp.proto_data = NULL;
++
++  item = g_slist_find_custom(fd->pfd, (gpointer *)&temp, spdy_p_compare);
++
++  if (item) {
++    fd->pfd = g_slist_remove(fd->pfd, item->data);
++  }
++}
++
++/*
++ * Saves state on header data for a given stream.
++ */
++static spdy_header_info_t* spdy_save_header_block(frame_data *fd,
++                                                  guint32 stream_id,
++                                                  guint16 frame_type,
++                                                  guint8 *header,
++                                                  guint length) {
++  GSList *filist = p_get_proto_data(fd, proto_spdy, 0);
++  spdy_header_info_t *header_info = se_alloc(sizeof(spdy_header_info_t));
++  if (filist != NULL)
++    spdy_p_remove_proto_data(fd, proto_spdy);
++  header_info->stream_id = stream_id;
++  header_info->header_block = header;
++  header_info->header_block_len = length;
++  header_info->frame_type = frame_type;
++  filist = g_slist_append(filist, header_info);
++  p_add_proto_data(fd, proto_spdy, 0, filist);
++  return header_info;
++  /* TODO(ers) these need to get deleted when no longer needed */
++}
++
++/*
++ * Retrieves saved state for a given stream.
++ */
++static spdy_header_info_t* spdy_find_saved_header_block(frame_data *fd,
++                                                        guint32 stream_id,
++                                                        guint16 frame_type) {
++  GSList *filist = p_get_proto_data(fd, proto_spdy, 0);
++  while (filist != NULL) {
++      spdy_header_info_t *hi = filist->data;
++      if (hi->stream_id == stream_id && hi->frame_type == frame_type)
++          return hi;
++      filist = g_slist_next(filist);
++  }
++  return NULL;
++}
++
++/*
++ * Given a content type string that may contain optional parameters,
++ * return the parameter string, if any, otherwise return NULL. This
++ * also has the side effect of null terminating the content type
++ * part of the original string.
++ */
++static gchar* spdy_parse_content_type(gchar *content_type) {
++  gchar *cp = content_type;
++
++  while (*cp != '\0' && *cp != ';' && !isspace(*cp)) {
++    *cp = tolower(*cp);
++    ++cp;
++  }
++  if (*cp == '\0') {
++    cp = NULL;
++  }
++
++  if (cp != NULL) {
++    *cp++ = '\0';
++    while (*cp == ';' || isspace(*cp)) {
++      ++cp;
++    }
++    if (*cp != '\0') {
++      return cp;
++    }
++  }
++  return NULL;
++}
++
++static int dissect_spdy_header_payload(
++    tvbuff_t *tvb,
++    int offset,
++    packet_info *pinfo,
++    proto_tree *frame_tree,
++    const spdy_control_frame_info_t *frame,
++    spdy_conv_t *conv_data) {
++  guint32 stream_id;
++  int header_block_length = frame->length;
++  int hdr_offset = 0;
++  tvbuff_t *header_tvb = NULL;
++  const gchar *hdr_method = NULL;
++  const gchar *hdr_path = NULL;
++  const gchar *hdr_version = NULL;
++  const gchar *hdr_host = NULL;
++  const gchar *hdr_scheme = NULL;
++  const gchar *hdr_status = NULL;
++  gchar *content_type = NULL;
++  gchar *content_encoding = NULL;
++  guint32 num_headers = 0;
++  proto_item *header_block_item = NULL;
++  proto_tree *header_block_tree = NULL;
++  proto_item *ti = NULL;
++
++  /* Get stream id, which is present in all types of header frames. */
++  stream_id = get_spdy_stream_id(tvb, offset);
++  dissect_spdy_stream_id(tvb, offset, pinfo, frame_tree);
++  offset += 4;
++
++  /* Get SYN_STREAM-only fields. */
++  if (frame->type == SPDY_SYN_STREAM) {
++    /* Get associated stream ID. */
++    dissect_spdy_stream_id_field(tvb, offset, pinfo, frame_tree,
++                                 hf_spdy_associated_streamid);
++    offset += 4;
++
++    /* Get priority */
++    if (frame_tree) {
++      proto_tree_add_bits_item(frame_tree,
++                               hf_spdy_priority,
++                               tvb,
++                               (offset) * 8,
++                               3,
++                               ENC_BIG_ENDIAN);
++    }
++    offset += 2;
++  }
++
++
++  /* Get our header block length. */
++  switch (frame->type) {
++    case SPDY_SYN_STREAM:
++      header_block_length -= 10;
++      break;
++    case SPDY_SYN_REPLY:
++    case SPDY_HEADERS:
++      header_block_length -= 4;
++      break;
++    default:
++      /* Unhandled case. This should never happen. */
++      assert(FALSE);
++  }
++
++  if (frame_tree) {
++    /* Add the header block. */
++    header_block_item = proto_tree_add_item(frame_tree,
++                                            hf_spdy_header_block,
++                                            tvb,
++                                            offset,
++                                            header_block_length,
++                                            ENC_NA);
++    header_block_tree = proto_item_add_subtree(header_block_item,
++                                               ett_spdy_header_block);
++  }
++
++  /* Decompress header block as necessary. */
++  if (!spdy_decompress_headers) {
++      header_tvb = tvb;
++      hdr_offset = offset;
++  } else {
++    spdy_header_info_t *header_info;
++
++    /* First attempt to find previously decompressed data.
++     * This will not work correctly for lower-level frames that contain more
++     * than one SPDY frame of the same type. We assume this to never be the
++     * case, though. */
++    header_info = spdy_find_saved_header_block(pinfo->fd,
++                                               stream_id,
++                                               frame->type);
++
++    /* Generate decompressed data and store it, since none was found. */
++    if (header_info == NULL) {
++      guint uncomp_length = 0;
++      z_streamp decomp;
++      guint8 *uncomp_ptr;
++
++      /* Get our decompressor. */
++      if (stream_id % 2 == 0) {
++        /* Even streams are server-initiated and should never get a
++         * client-initiated header block. Use reply decompressor. */
++        decomp = conv_data->rply_decompressor;
++      } else if (frame->type == SPDY_HEADERS) {
++        /* Odd streams are client-initiated, but may have HEADERS from either
++         * side. Currently, no known clients send HEADERS so we assume they are
++         * all from the server. */
++        decomp = conv_data->rply_decompressor;
++      } else if (frame->type == SPDY_SYN_STREAM) {
++        decomp = conv_data->rqst_decompressor;
++      } else if (frame->type == SPDY_SYN_REPLY) {
++        decomp = conv_data->rply_decompressor;
++      } else {
++        /* Unhandled case. This should never happen. */
++        assert(FALSE);
++      }
++
++      /* Decompress. */
++      uncomp_ptr = spdy_decompress_header_block(tvb,
++                                                decomp,
++                                                conv_data->dictionary_id,
++                                                offset,
++                                                header_block_length,
++                                                &uncomp_length);
++
++      /* Catch decompression failures. */
++      if (uncomp_ptr == NULL) {
++        expert_add_info_format(pinfo, frame_tree, PI_UNDECODED, PI_ERROR,
++                               "Inflation failed. Aborting.");
++        if (frame_tree) {
++          proto_item_append_text(frame_tree,
++                                 " [Error: Header decompression failed]");
++        }
++        return -1;
++      }
++
++      /* Store decompressed data. */
++      header_info = spdy_save_header_block(pinfo->fd,
++                                           stream_id,
++                                           frame->type,
++                                           uncomp_ptr,
++                                           uncomp_length);
++    }
++
++    /* Create a tvb containing the uncompressed data. */
++    header_tvb = tvb_new_child_real_data(tvb,
++                                         header_info->header_block,
++                                         header_info->header_block_len,
++                                         header_info->header_block_len);
++    add_new_data_source(pinfo, header_tvb, "Uncompressed headers");
++    hdr_offset = 0;
++  }
++
++  /* Get header block details. */
++  if (header_tvb == NULL || !spdy_decompress_headers) {
++    num_headers = 0;
++  } else {
++    num_headers = tvb_get_ntohl(header_tvb, hdr_offset);
++    ti = proto_tree_add_item(frame_tree,
++                             hf_spdy_num_headers,
++                             header_tvb,
++                             hdr_offset,
++                             4,
++                             ENC_BIG_ENDIAN);
++  }
++  hdr_offset += 4;
++
++  /* Process headers. */
++  while (num_headers--) {
++    gchar *header_name;
++    const gchar *header_value;
++    proto_tree *header_tree;
++    proto_item *header;
++    proto_item *header_name_ti;
++    proto_item *header_value_ti;
++    int header_name_offset;
++    int header_value_offset;
++    int header_name_length;
++    int header_value_length;
++
++    /* Get header name details. */
++    if (tvb_length_remaining(header_tvb, hdr_offset) < 4) {
++      expert_add_info_format(pinfo, frame_tree, PI_MALFORMED, PI_ERROR,
++                             "Not enough frame data for header name size.");
++      break;
++    }
++    header_name_offset = hdr_offset;
++    header_name_length = tvb_get_ntohl(header_tvb, hdr_offset);
++    hdr_offset += 4;
++    if (tvb_length_remaining(header_tvb, hdr_offset) < header_name_length) {
++      expert_add_info_format(pinfo, frame_tree, PI_MALFORMED, PI_ERROR,
++                             "Not enough frame data for header name.");
++      break;
++    }
++    header_name = (gchar *)tvb_get_ephemeral_string(header_tvb,
++                                                    hdr_offset,
++                                                    header_name_length);
++    hdr_offset += header_name_length;
++
++    /* Get header value details. */
++    if (tvb_length_remaining(header_tvb, hdr_offset) < 4) {
++      expert_add_info_format(pinfo, frame_tree, PI_MALFORMED, PI_ERROR,
++                             "Not enough frame data for header value size.");
++      break;
++    }
++    header_value_offset = hdr_offset;
++    header_value_length = tvb_get_ntohl(header_tvb, hdr_offset);
++    hdr_offset += 4;
++    if (tvb_length_remaining(header_tvb, hdr_offset) < header_value_length) {
++      expert_add_info_format(pinfo, frame_tree, PI_MALFORMED, PI_ERROR,
++                             "Not enough frame data for header value.");
++      break;
++    }
++    header_value = (gchar *)tvb_get_ephemeral_string(header_tvb,
++                                                     hdr_offset,
++                                                     header_value_length);
++    hdr_offset += header_value_length;
++
++    /* Populate tree with header name/value details. */
++    if (frame_tree) {
++      /* Add 'Header' subtree with description. */
++      header = proto_tree_add_item(frame_tree,
++                                   hf_spdy_header,
++                                   header_tvb,
++                                   header_name_offset,
++                                   hdr_offset - header_name_offset,
++                                   ENC_NA);
++      proto_item_append_text(header, ": %s: %s", header_name, header_value);
++      header_tree = proto_item_add_subtree(header, ett_spdy_header);
++
++      /* Add header name. */
++      header_name_ti = proto_tree_add_item(header_tree,
++                                           hf_spdy_header_name,
++                                           header_tvb,
++                                           header_name_offset,
++                                           4,
++                                           ENC_NA);
++
++      /* Add header value. */
++      header_value_ti = proto_tree_add_item(header_tree,
++                                            hf_spdy_header_value,
++                                            header_tvb,
++                                            header_value_offset,
++                                            4,
++                                            ENC_NA);
++    }
++
++    /*
++     * TODO(ers) check that the header name contains only legal characters.
++     */
++    /* TODO(hkhalil): Make sure that prohibited headers aren't sent. */
++    if (g_strcmp0(header_name, ":method") == 0) {
++      hdr_method = header_value;
++    } else if (g_strcmp0(header_name, ":path") == 0) {
++      hdr_path = header_value;
++    } else if (g_strcmp0(header_name, ":version") == 0) {
++      hdr_version = header_value;
++    } else if (g_strcmp0(header_name, ":host") == 0) {
++      hdr_host = header_value;
++    } else if (g_strcmp0(header_name, ":scheme") == 0) {
++      hdr_scheme = header_value;
++    } else if (g_strcmp0(header_name, ":status") == 0) {
++      hdr_status = header_value;
++    } else if (g_strcmp0(header_name, "content-type") == 0) {
++      content_type = se_strdup(header_value);
++    } else if (g_strcmp0(header_name, "content-encoding") == 0) {
++      content_encoding = se_strdup(header_value);
++    }
++  }
++
++  /* Set Info column. */
++  if (hdr_version != NULL) {
++    if (hdr_status == NULL) {
++      col_append_fstr(pinfo->cinfo, COL_INFO, " Request=\"%s %s://%s%s %s\"",
++                      hdr_method, hdr_scheme, hdr_host, hdr_path, hdr_version);
++    } else {
++      col_append_fstr(pinfo->cinfo, COL_INFO, " Response=\"%s %s\"",
++                      hdr_status, hdr_version);
++    }
++  }
++
++  /*
++   * If we expect data on this stream, we need to remember the content
++   * type and content encoding.
++   */
++  if (content_type != NULL && !pinfo->fd->flags.visited) {
++    gchar *content_type_params = spdy_parse_content_type(content_type);
++    spdy_save_stream_info(conv_data, stream_id, content_type,
++                          content_type_params, content_encoding);
++  }
++
++  return frame->length;
++}
++
++static int dissect_spdy_rst_stream_payload(
++    tvbuff_t *tvb,
++    int offset,
++    packet_info *pinfo,
++    proto_tree *frame_tree,
++    const spdy_control_frame_info_t *frame) {
++  guint32 rst_status;
++
++  /* Get stream ID and add to info column and tree. */
++  dissect_spdy_stream_id(tvb, offset, pinfo, frame_tree);
++  offset += 4;
++
++  /* Get status. */
++  rst_status = tvb_get_ntohl(tvb, offset);
++  if (try_val_to_str(rst_status, rst_stream_status_names) == NULL) {
++    /* Handle boundary conditions. */
++    expert_add_info_format(pinfo, frame_tree, PI_PROTOCOL, PI_ERROR,
++                           "Invalid status code for RST_STREAM: %u",
++                           rst_status);
++  }
++
++  /* Add status to info column. */
++  col_append_fstr(pinfo->cinfo,
++                  COL_INFO,
++                  " Status=%s)",
++                  val_to_str(rst_status,
++                             rst_stream_status_names,
++                             "Unknown (%d)"));
++
++  /* Add proto item for rst_status. */
++  if (frame_tree) {
++    proto_tree_add_item(frame_tree,
++                        hf_spdy_rst_stream_status,
++                        tvb,
++                        offset,
++                        4,
++                        ENC_BIG_ENDIAN);
++    proto_item_append_text(frame_tree,
++                           ", Status: %s",
++                           val_to_str(rst_status,
++                                      rst_stream_status_names,
++                                      "Unknown (%d)"));
++  }
++
++  return frame->length;
++}
++
++static int dissect_spdy_settings_payload(
++    tvbuff_t *tvb,
++    int offset,
++    packet_info *pinfo,
++    proto_tree *frame_tree,
++    const spdy_control_frame_info_t *frame) {
++  guint32 num_entries;
++  proto_item *ti;
++  proto_tree *setting_tree;
++  proto_tree *flags_tree;
++
++  /* Make sure that we have enough room for our number of entries field. */
++  if (frame->length < 4) {
++    expert_add_info_format(pinfo, frame_tree, PI_MALFORMED, PI_ERROR,
++                           "SETTINGS frame too small for number of entries "
++                           "field.");
++    return -1;
++  }
++
++  /* Get number of entries, and make sure we have enough room for them. */
++  num_entries = tvb_get_ntohl(tvb, offset);
++  if (frame->length < num_entries * 8) {
++    expert_add_info_format(pinfo, frame_tree, PI_MALFORMED, PI_ERROR,
++                           "SETTINGS frame too small [num_entries=%d]",
++                           num_entries);
++    return -1;
++  }
++  if (frame_tree) {
++    proto_tree_add_item(frame_tree,
++                        hf_spdy_num_settings,
++                        tvb,
++                        offset,
++                        4,
++                        ENC_BIG_ENDIAN);
++  }
++  offset += 4;
++
++  /* Dissect each entry. */
++  while (num_entries > 0) {
++    const gchar *setting_id_str;
++    guint32 setting_value;
++
++    if (frame_tree) {
++      /* Create key/value pair subtree. */
++      ti = proto_tree_add_item(frame_tree,
++                               hf_spdy_setting,
++                               tvb,
++                               offset,
++                               8,
++                               ENC_NA);
++      setting_tree = proto_item_add_subtree(ti, ett_spdy_setting);
++    }
++
++    /* Set flags. */
++    if (frame_tree) {
++      ti = proto_tree_add_item(setting_tree,
++                               hf_spdy_flags,
++                               tvb,
++                               offset,
++                               1,
++                               ENC_NA);
++      /* TODO(hkhalil): Prettier output for flags sub-tree description. */
++      flags_tree = proto_item_add_subtree(ti, ett_spdy_flags);
++      proto_tree_add_item(flags_tree,
++                          hf_spdy_flags_persist_value,
++                          tvb,
++                          offset,
++                          1,
++                          ENC_BIG_ENDIAN);
++      proto_tree_add_item(flags_tree,
++                          hf_spdy_flags_persisted,
++                          tvb,
++                          offset,
++                          1,
++                          ENC_BIG_ENDIAN);
++    }
++    offset += 1;
++
++    /* Set ID. */
++    setting_id_str = val_to_str(tvb_get_ntoh24(tvb, offset), setting_id_names,
++                                "Unknown(%d)");
++    if (frame_tree) {
++      proto_tree_add_item(setting_tree,
++                          hf_spdy_setting_id,
++                          tvb,
++                          offset,
++                          3,
++                          ENC_BIG_ENDIAN);
++    }
++    offset += 3;
++
++    /* Set Value. */
++    setting_value = tvb_get_ntohl(tvb, offset);
++    if (frame_tree) {
++      proto_tree_add_item(setting_tree,
++                          hf_spdy_setting_value,
++                          tvb,
++                          offset,
++                          4,
++                          ENC_BIG_ENDIAN);
++      proto_item_set_text(setting_tree, "Setting, %s: %u", setting_id_str,
++                          setting_value);
++      proto_item_append_text(frame_tree, ", %s: %u", setting_id_str,
++                             setting_value);
++    }
++    offset += 4;
++
++    /* Append to info column. */
++    col_append_fstr(pinfo->cinfo, COL_INFO, " %s=%u", setting_id_str,
++                    setting_value);
++
++    /* Increment. */
++    --num_entries;
++  }
++
++  return frame->length;
++}
++
++static int dissect_spdy_ping_payload(tvbuff_t *tvb,
++                                     int offset,
++                                     packet_info *pinfo,
++                                     proto_tree *frame_tree,
++                                     const spdy_control_frame_info_t *frame) {
++  /* Get ping ID. */
++  guint32 ping_id = tvb_get_ntohl(tvb, offset);
++
++  /* Add proto item for ping ID. */
++  if (frame_tree) {
++    proto_tree_add_item(frame_tree,
++                        hf_spdy_ping_id,
++                        tvb,
++                        offset,
++                        4,
++                        ENC_BIG_ENDIAN);
++    proto_item_append_text(frame_tree, ", ID: %u", ping_id);
++  }
++  offset += 4;
++
++  /* Add ping ID to info column. */
++  col_append_fstr(pinfo->cinfo, COL_INFO, " ID=%u", ping_id);
++
++  return frame->length;
++}
++
++static int dissect_spdy_goaway_payload(tvbuff_t *tvb,
++                                       int offset,
++                                       packet_info *pinfo,
++                                       proto_tree *frame_tree,
++                                       const spdy_control_frame_info_t *frame) {
++  guint32 goaway_status;
++
++  /* Get last good stream ID and add to info column and tree. */
++  dissect_spdy_stream_id_field(tvb, offset, pinfo, frame_tree,
++                               hf_spdy_goaway_last_good_stream_id);
++  offset += 4;
++
++  /* Get status. */
++  goaway_status = tvb_get_ntohl(tvb, offset);
++  if (try_val_to_str(goaway_status, goaway_status_names) == NULL) {
++    /* Handle boundary conditions. */
++    expert_add_info_format(pinfo, frame_tree, PI_PROTOCOL, PI_ERROR,
++                           "Invalid status code for GOAWAY: %u",
++                           goaway_status);
++  }
++
++  /* Add status to info column. */
++  col_append_fstr(pinfo->cinfo,
++                  COL_INFO,
++                  " Status=%s)",
++                  val_to_str(goaway_status,
++                             rst_stream_status_names,
++                             "Unknown (%d)"));
++
++  /* Add proto item for goaway_status. */
++  if (frame_tree) {
++    proto_tree_add_item(frame_tree,
++                        hf_spdy_goaway_status,
++                        tvb,
++                        offset,
++                        4,
++                        ENC_BIG_ENDIAN);
++  }
++
++  return frame->length;
++}
++
++static int dissect_spdy_window_update_payload(
++    tvbuff_t *tvb,
++    int offset,
++    packet_info *pinfo,
++    proto_tree *frame_tree,
++    const spdy_control_frame_info_t *frame) {
++  guint32             window_update_delta;
++
++  /* Get stream ID. */
++  dissect_spdy_stream_id(tvb, offset, pinfo, frame_tree);
++  offset += 4;
++
++  /* Get window update delta. */
++  window_update_delta = tvb_get_bits32(tvb, (offset * 8) + 1, 31, FALSE);
++
++  /* Add proto item for window update delta. */
++  if (frame_tree) {
++    proto_tree_add_item(frame_tree,
++                        hf_spdy_window_update_delta,
++                        tvb,
++                        offset,
++                        4,
++                        ENC_BIG_ENDIAN);
++    proto_item_append_text(frame_tree, ", Delta: %u", window_update_delta);
++  }
++  offset += 4;
++
++  /* Add delta to info column. */
++  col_append_fstr(pinfo->cinfo, COL_INFO, " Delta=%u",
++                      window_update_delta);
++
++  return frame->length;
++}
++
++/*
++ * Performs SPDY frame dissection.
++ */
++int dissect_spdy_frame(tvbuff_t *tvb,
++                       int offset,
++                       packet_info *pinfo,
++                       proto_tree *tree,
++                       spdy_conv_t *conv_data) {
++  guint8              control_bit;
++  spdy_control_frame_info_t frame;
++  guint32             stream_id = 0;
++  const gchar         *frame_type_name;
++  proto_tree          *spdy_tree = NULL;
++  proto_item          *spdy_proto = NULL;
++
++  if (spdy_debug) {
++    printf("Attempting dissection for frame #%d\n",
++           pinfo->fd->num);
++  }
++
++  /*
++   * Minimum size for a SPDY frame is 8 bytes.
++   */
++  if (tvb_length_remaining(tvb, offset) < 8) {
++    expert_add_info_format(pinfo, tree, PI_MALFORMED, PI_ERROR,
++                           "Reported length remaining too small (%d < 8)",
++                           tvb_length_remaining(tvb, offset));
++    return -1;
++  }
++
++  col_set_str(pinfo->cinfo, COL_PROTOCOL, "SPDY");
++
++  /* Create SPDY tree elements. */
++  if (tree) {
++    /* Create frame root. */
++    spdy_proto = proto_tree_add_item(tree,
++                                     proto_spdy,
++                                     tvb,
++                                     offset,
++                                     -1,
++                                     ENC_NA);
++    spdy_tree = proto_item_add_subtree(spdy_proto, ett_spdy);
++  }
++
++  /* Add control bit. */
++  control_bit = tvb_get_bits8(tvb, offset << 3, 1);
++  if (spdy_tree) {
++    dissect_spdy_control_bit(tvb, offset, spdy_tree);
++  }
++
++  /* Process first four bytes of frame, formatted depending on control bit. */
++  if (control_bit) {
++    /* Add version. */
++    frame.version = tvb_get_bits16(tvb, (offset * 8) + 1, 15, FALSE);
++    if (spdy_tree) {
++      proto_tree_add_bits_item(spdy_tree,
++                               hf_spdy_version,
++                               tvb,
++                               offset * 8 + 1,
++                               15,
++                               ENC_BIG_ENDIAN);
++    }
++    offset += 2;
++
++    /* Add control frame type. */
++    frame.type = tvb_get_ntohs(tvb, offset);
++    if (frame.type >= SPDY_INVALID) {
++      expert_add_info_format(pinfo, tree, PI_PROTOCOL, PI_ERROR,
++                             "Invalid SPDY control frame type: %d",
++                             frame.type);
++      return -1;
++    }
++    if (spdy_tree) {
++      proto_tree_add_item(spdy_tree,
++                          hf_spdy_type,
++                          tvb,
++                          offset,
++                          2,
++                          ENC_BIG_ENDIAN);
++    }
++    offset += 2;
++  } else {
++    frame.type = SPDY_DATA;
++    frame.version = 0; /* Version doesn't apply to DATA. */
++
++    /* Add stream ID. */
++    stream_id = get_spdy_stream_id(tvb, offset);
++    if (spdy_tree) {
++      proto_tree_add_item(spdy_tree,
++                          hf_spdy_streamid,
++                          tvb,
++                          offset,
++                          4,
++                          ENC_BIG_ENDIAN);
++    }
++    offset += 4;
++  }
++
++  /* Add frame info. */
++  frame_type_name = val_to_str(frame.type, frame_type_names, "Unknown(%d)");
++  col_add_str(pinfo->cinfo, COL_INFO, frame_type_name);
++  if (spdy_tree) {
++    proto_item_append_text(spdy_tree, ", %s", frame_type_name);
++  }
++
++  /* Add flags. */
++  frame.flags = tvb_get_guint8(tvb, offset);
++  if (spdy_tree) {
++    dissect_spdy_flags(tvb, offset, spdy_tree, &frame);
++  }
++  offset += 1;
++
++  /* Add length. */
++  frame.length = tvb_get_ntoh24(tvb, offset);
++  if (spdy_tree) {
++    proto_item_set_len(spdy_proto, frame.length + 8);
++    proto_tree_add_item(spdy_tree,
++                        hf_spdy_length,
++                        tvb,
++                        offset,
++                        3,
++                        ENC_BIG_ENDIAN);
++  }
++  offset += 3;
++
++  /*
++   * Make sure there's as much data as the frame header says there is.
++   */
++  if ((guint)tvb_length_remaining(tvb, offset) < frame.length) {
++    expert_add_info_format(pinfo, tree, PI_MALFORMED, PI_ERROR,
++                           "Not enough frame data: %d vs. %d",
++                           frame.length, tvb_length_remaining(tvb, offset));
++    return -1;
++  }
++
++  /* Dissect DATA payload as necessary. */
++  if (!control_bit) {
++    return offset + dissect_spdy_data_payload(tvb,
++                                              offset,
++                                              pinfo,
++                                              tree,
++                                              spdy_tree,
++                                              spdy_proto,
++                                              conv_data,
++                                              stream_id,
++                                              &frame);
++  }
++
++  /* Abort here if the version is too low. */
++  if (frame.version < MIN_SPDY_VERSION) {
++    if (spdy_tree) {
++      proto_item_append_text(spdy_proto, " [Unsupported Version]");
++    }
++    if (spdy_debug) {
++      printf("Unsupported version. Gracefully aborting frame dissection.\n");
++    }
++    return frame.length + 8;
++  }
++
++  switch (frame.type) {
++    case SPDY_SYN_STREAM:
++    case SPDY_SYN_REPLY:
++    case SPDY_HEADERS:
++      if (0 > dissect_spdy_header_payload(tvb, offset, pinfo, spdy_tree,
++                                          &frame, conv_data)) {
++        return -1;
++      }
++
++      break;
++
++    case SPDY_RST_STREAM:
++      if (0 > dissect_spdy_rst_stream_payload(tvb, offset, pinfo, spdy_tree,
++                                              &frame)) {
++        return -1;
++      }
++      break;
++
++    case SPDY_SETTINGS:
++      if (0 > dissect_spdy_settings_payload(tvb, offset, pinfo, spdy_tree,
++                                            &frame)) {
++        return -1;
++      }
++      break;
++
++    case SPDY_PING:
++      if (0 > dissect_spdy_ping_payload(tvb, offset, pinfo, spdy_tree,
++                                        &frame)) {
++        return -1;
++      }
++      break;
++
++    case SPDY_GOAWAY:
++      if (0 > dissect_spdy_goaway_payload(tvb, offset, pinfo, spdy_tree,
++                                          &frame)) {
++        return -1;
++      }
++      break;
++
++    case SPDY_WINDOW_UPDATE:
++      if (0 > dissect_spdy_window_update_payload(tvb, offset, pinfo, spdy_tree,
++                                                 &frame)) {
++        return -1;
++      }
++      break;
++
++    case SPDY_CREDENTIAL:
++      /* TODO(hkhalil): Show something meaningful. */
++      break;
++
++    default:
++      expert_add_info_format(pinfo, spdy_tree, PI_MALFORMED, PI_ERROR,
++                             "Unhandled SPDY frame type: %d", frame.type);
++      return -1;
++      break;
++  }
++
++  /* Assume that we've consumed the whole frame. */
++  return 8 + frame.length;
++}
++
++static guint get_spdy_message_len(packet_info *UNUSED(pinfo), tvbuff_t *tvb,
++                                  int offset) {
++  return (guint)tvb_get_ntoh24(tvb, offset + 5) + 8;
++}
++
++/*
++ * Wrapper for dissect_spdy_frame, sets fencing and desegments as necessary.
++ */
++static int dissect_spdy(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree) {
++  spdy_conv_t *conv_data = NULL;
++  int offset = 0;
++  int expected_frame_len = 0;
++  int dissected_len = 0;
++  int remaining_len = tvb_length_remaining(tvb, offset);
++
++  /* Loop over the buffer. */
++  while (remaining_len > 0) {
++    /* Make sure that we have at least the next frame header. */
++    if (remaining_len < 8) {
++      pinfo->desegment_offset = offset;
++      pinfo->desegment_len = DESEGMENT_ONE_MORE_SEGMENT;
++      return offset;
++    }
++
++    /* Make sure that we have enough data for the next whole frame. */
++    expected_frame_len = get_spdy_message_len(pinfo, tvb, offset);
++    if (expected_frame_len > remaining_len) {
++      pinfo->desegment_offset = offset;
++      pinfo->desegment_len = expected_frame_len - remaining_len;
++      return offset;
++    }
++
++    /* Dissect the frame. */
++    conv_data = get_or_create_spdy_conversation_data(pinfo);
++    dissected_len = dissect_spdy_frame(tvb, offset, pinfo, tree, conv_data);
++    if (dissected_len != expected_frame_len) {
++      if (spdy_debug) {
++        printf("Error decoding SPDY frame!\n");
++      }
++      return offset;
++    }
++    offset += dissected_len;
++    remaining_len = tvb_length_remaining(tvb, offset);
++
++    /*
++     * OK, we've set the Protocol and Info columns for the
++     * first SPDY message; set a fence so that subsequent
++     * SPDY messages don't overwrite the Info column.
++     */
++    col_set_fence(pinfo->cinfo, COL_INFO);
++  }
++
++  /* Return the number of bytes processed. */
++  return offset;
++}
++
++/*
++ * Looks for SPDY frame at tvb start.
++ * If not enough data for either, requests more via desegment struct.
++ */
++static gboolean dissect_spdy_heur(tvbuff_t *tvb,
++                                  packet_info *pinfo,
++                                  proto_tree *tree) {
++  int old_desegment_offset = pinfo->desegment_offset;
++  int old_desegment_len = pinfo->desegment_len;
++
++  /*
++   * The first byte of a SPDY frame must be either 0 or
++   * 0x80. If it's not, assume that this is not SPDY.
++   * (In theory, a data frame could have a stream ID
++   * >= 2^24, in which case it won't have 0 for a first
++   * byte, but this is a pretty reliable heuristic for
++   * now.)
++   */
++  guint8 first_byte = tvb_get_guint8(tvb, 0);
++  if (first_byte != 0x80 && first_byte != 0x0) {
++    return FALSE;
++  }
++
++  /* Attempt dissection. */
++  if (dissect_spdy(tvb, pinfo, tree) != 0) {
++    return TRUE;
++  }
++
++  /* Revert any work that we did. */
++  pinfo->desegment_offset = old_desegment_offset;
++  pinfo->desegment_len = old_desegment_len;
++
++  return FALSE;
++}
++
++/*
++ * Called when the plugin will be working on a completely new capture.
++ */
++static void reinit_spdy(void) {
++}
++
++/* NMAKE complains about flags_set_truth not being constant. Duplicate
++ * the values inside of it. */
++static const true_false_string tfs_spdy_set_notset = { "Set", "Not set" };
++
++/*
++ * Performs plugin registration.
++ */
++void proto_register_spdy(void) {
++  static hf_register_info hf[] = {
++    { &hf_spdy_data,
++      { "Data",           "spdy.data",
++        FT_BYTES, BASE_NONE, NULL, 0x0,
++        "", HFILL
++      }
++    },
++    { &hf_spdy_control_bit,
++      { "Control bit",    "spdy.control_bit",
++        FT_BOOLEAN, BASE_NONE, NULL, 0x0,
++        "TRUE if SPDY control frame", HFILL
++      }
++    },
++    { &hf_spdy_version,
++      { "Version",        "spdy.version",
++        FT_UINT16, BASE_DEC, NULL, 0x0,
++        "", HFILL
++      }
++    },
++    { &hf_spdy_type,
++      { "Type",           "spdy.type",
++        FT_UINT16, BASE_DEC,
++        VALS(frame_type_names), 0x0,
++        "", HFILL
++      }
++    },
++    { &hf_spdy_flags,
++      { "Flags",          "spdy.flags",
++        FT_UINT8, BASE_HEX, NULL, 0x0,
++        "", HFILL
++      }
++    },
++    { &hf_spdy_flags_fin,
++      { "FIN",            "spdy.flags.fin",
++        FT_BOOLEAN, 8,
++        TFS(&tfs_spdy_set_notset), SPDY_FLAG_FIN,
++        NULL, HFILL
++      }
++    },
++    { &hf_spdy_flags_unidirectional,
++      { "Unidirectional", "spdy.flags.fin",
++        FT_BOOLEAN, 8,
++        TFS(&tfs_spdy_set_notset), SPDY_FLAG_UNIDIRECTIONAL,
++        NULL, HFILL
++      }
++    },
++    { &hf_spdy_flags_clear_settings,
++      { "Persist Value",  "spdy.flags.clear_settings",
++        FT_BOOLEAN, 8,
++        TFS(&tfs_spdy_set_notset), SPDY_FLAG_SETTINGS_CLEAR_SETTINGS,
++        NULL, HFILL
++      }
++    },
++    { &hf_spdy_flags_persist_value,
++      { "Persist Value",  "spdy.flags.persist_value",
++        FT_BOOLEAN, 8,
++        TFS(&tfs_spdy_set_notset), SPDY_FLAG_SETTINGS_PERSIST_VALUE,
++        NULL, HFILL
++      }
++    },
++    { &hf_spdy_flags_persisted,
++      { "Persisted",      "spdy.flags.persisted",
++        FT_BOOLEAN, 8,
++        TFS(&tfs_spdy_set_notset), SPDY_FLAG_SETTINGS_PERSISTED,
++        NULL, HFILL
++      }
++    },
++    { &hf_spdy_length,
++      { "Length",         "spdy.length",
++        FT_UINT24, BASE_DEC, NULL, 0x0,
++        "", HFILL
++      }
++    },
++    { &hf_spdy_header_block,
++      { "Header block", "spdy.header_block",
++          FT_BYTES, BASE_NONE, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_header,
++      { "Header",         "spdy.header",
++        FT_NONE, BASE_NONE, NULL, 0x0,
++        "", HFILL
++      }
++    },
++    { &hf_spdy_header_name,
++      { "Name",           "spdy.header.name",
++          FT_UINT_STRING, BASE_NONE, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_header_value,
++      { "Value",          "spdy.header.value",
++          FT_UINT_STRING, BASE_NONE, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_streamid,
++      { "Stream ID",      "spdy.streamid",
++          FT_UINT32, BASE_DEC, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_associated_streamid,
++      { "Associated Stream ID",   "spdy.associated.streamid",
++          FT_UINT32, BASE_DEC, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_priority,
++      { "Priority",       "spdy.priority",
++          FT_UINT8, BASE_DEC, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_num_headers,
++      { "Number of headers", "spdy.numheaders",
++          FT_UINT32, BASE_DEC, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_rst_stream_status,
++      { "Reset Status",   "spdy.rst_stream_status",
++          FT_UINT32, BASE_DEC, VALS(rst_stream_status_names), 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_num_settings,
++      { "Number of Settings", "spdy.num_settings",
++          FT_UINT32, BASE_DEC, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_setting,
++      { "Setting",        "spdy.setting",
++          FT_BYTES, BASE_NONE, NULL, 0x0,
++          NULL, HFILL
++      }
++    },
++    { &hf_spdy_setting_id,
++      { "ID",             "spdy.setting.id",
++          FT_UINT24, BASE_DEC, VALS(setting_id_names), 0x0,
++          NULL, HFILL
++      }
++    },
++    { &hf_spdy_setting_value,
++      { "Value",          "spdy.setting.value",
++          FT_UINT32, BASE_DEC, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_ping_id,
++      { "Ping ID",        "spdy.ping_id",
++          FT_UINT24, BASE_DEC, NULL, 0x0,
++          NULL, HFILL
++      }
++    },
++    { &hf_spdy_goaway_last_good_stream_id,
++      { "Last Good Stream ID", "spdy.goaway_last_good_stream_id",
++          FT_UINT32, BASE_DEC, NULL, 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_goaway_status,
++      { "Go Away Status", "spdy.goaway_status",
++          FT_UINT32, BASE_DEC, VALS(goaway_status_names), 0x0,
++          "", HFILL
++      }
++    },
++    { &hf_spdy_window_update_delta,
++      { "Window Update Delta", "spdy.window_update_delta",
++          FT_UINT32, BASE_DEC, NULL, 0x0,
++          NULL, HFILL
++      }
++    },
++  };
++  static gint *ett[] = {
++    &ett_spdy,
++    &ett_spdy_flags,
++    &ett_spdy_header_block,
++    &ett_spdy_header,
++    &ett_spdy_setting,
++    &ett_spdy_encoded_entity,
++  };
++
++  module_t *spdy_module;
++
++  proto_spdy = proto_register_protocol("SPDY", "SPDY", "spdy");
++  proto_register_field_array(proto_spdy, hf, array_length(hf));
++  proto_register_subtree_array(ett, array_length(ett));
++  new_register_dissector("spdy", dissect_spdy, proto_spdy);
++  spdy_module = prefs_register_protocol(proto_spdy, reinit_spdy);
++  prefs_register_bool_preference(spdy_module, "assemble_data_frames",
++                                 "Assemble SPDY bodies that consist of multiple DATA frames",
++                                 "Whether the SPDY dissector should reassemble multiple "
++                                 "data frames into an entity body.",
++                                 &spdy_assemble_entity_bodies);
++#ifdef HAVE_LIBZ
++  prefs_register_bool_preference(spdy_module, "decompress_headers",
++                                 "Uncompress SPDY headers",
++                                 "Whether to uncompress SPDY headers.",
++                                 &spdy_decompress_headers);
++  prefs_register_bool_preference(spdy_module, "decompress_body",
++                                 "Uncompress entity bodies",
++                                 "Whether to uncompress entity bodies that are compressed "
++                                 "using \"Content-Encoding: \"",
++                                 &spdy_decompress_body);
++#endif
++  prefs_register_bool_preference(spdy_module, "debug_output",
++                                 "Print debug info on stdout",
++                                 "Print debug info on stdout",
++                                 &spdy_debug);
++
++  /** Create dissector handle and register for dissection. */
++  spdy_handle = new_create_dissector_handle(dissect_spdy, proto_spdy);
++  dissector_add_uint("tcp.port", TCP_PORT_SPDY, spdy_handle);
++  ssl_dissector_add(SSL_PORT_SPDY, "spdy", TRUE);
++
++  /*
++   * Register for tapping
++   */
++  spdy_tap = register_tap("spdy"); /* SPDY statistics tap */
++  spdy_eo_tap = register_tap("spdy_eo"); /* SPDY Export Object tap */
++}
++
++void proto_reg_handoff_spdy(void) {
++  data_handle = find_dissector("data");
++  media_handle = find_dissector("media");
++  heur_dissector_add("tcp", dissect_spdy_heur, proto_spdy);
++}
+diff -ruN wireshark-1.10.5/plugins/spdyshark/packet-spdy.h wireshark-1.10.5-with-spdyshark/plugins/spdyshark/packet-spdy.h
+--- wireshark-1.10.5/plugins/spdyshark/packet-spdy.h	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/packet-spdy.h	2014-02-06 00:46:34.000000000 -0500
+@@ -0,0 +1,49 @@
++/* packet-spdy.h
++ *
++ * Copyright 2010, Google Inc.
++ * Hasan Khalil <hkhalil@google.com>
++ * Chris Bentzel <cbentzel@google.com>
++ * Eric Shienbrood <ers@google.com>
++ *
++ * $Id$
++ *
++ * Wireshark - Network traffic analyzer
++ * By Gerald Combs <gerald@wireshark.org>
++ * Copyright 1998 Gerald Combs
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License
++ * as published by the Free Software Foundation; either version 2
++ * of the License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++ */
++
++#ifndef __PACKET_SPDY_H__
++#define __PACKET_SPDY_H__
++#pragma once
++
++#include <epan/packet.h>
++#ifdef HAVE_LIBZ
++#include <zlib.h>
++#endif
++
++/*
++ * Conversation data - used for assembling multi-data-frame
++ * entities and for decompressing request & reply header blocks.
++ */
++typedef struct _spdy_conv_t {
++    z_streamp rqst_decompressor;
++    z_streamp rply_decompressor;
++    guint32   dictionary_id;
++    GArray    *streams;
++} spdy_conv_t;
++
++#endif /* __PACKET_SPDY_H__ */
+diff -ruN wireshark-1.10.5/plugins/spdyshark/plugin.c wireshark-1.10.5-with-spdyshark/plugins/spdyshark/plugin.c
+--- wireshark-1.10.5/plugins/spdyshark/plugin.c	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/plugin.c	2014-02-06 01:07:20.000000000 -0500
+@@ -0,0 +1,33 @@
++/*
++ * Do not modify this file. Changes will be overwritten.
++ *
++ * Generated automatically from ../../tools/make-dissector-reg.py.
++ */
++
++#include "config.h"
++
++#include <gmodule.h>
++
++#include "moduleinfo.h"
++
++/* plugins are DLLs */
++#define WS_BUILD_DLL
++#include "ws_symbol_export.h"
++
++#ifndef ENABLE_STATIC
++WS_DLL_PUBLIC_NOEXTERN const gchar version[] = VERSION;
++
++/* Start the functions we need for the plugin stuff */
++
++WS_DLL_PUBLIC_NOEXTERN void
++plugin_register (void)
++{
++  {extern void proto_register_spdy (void); proto_register_spdy ();}
++}
++
++WS_DLL_PUBLIC_NOEXTERN void
++plugin_reg_handoff(void)
++{
++  {extern void proto_reg_handoff_spdy (void); proto_reg_handoff_spdy ();}
++}
++#endif
+diff -ruN wireshark-1.10.5/plugins/spdyshark/plugin.rc.in wireshark-1.10.5-with-spdyshark/plugins/spdyshark/plugin.rc.in
+--- wireshark-1.10.5/plugins/spdyshark/plugin.rc.in	1969-12-31 19:00:00.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/spdyshark/plugin.rc.in	2014-02-06 00:46:34.000000000 -0500
+@@ -0,0 +1,34 @@
++#include "winver.h"
++
++VS_VERSION_INFO VERSIONINFO
++ FILEVERSION @RC_MODULE_VERSION@
++ PRODUCTVERSION @RC_VERSION@
++ FILEFLAGSMASK 0x0L
++#ifdef _DEBUG
++ FILEFLAGS VS_FF_DEBUG
++#else
++ FILEFLAGS 0
++#endif
++ FILEOS VOS_NT_WINDOWS32
++ FILETYPE VFT_DLL
++BEGIN
++    BLOCK "StringFileInfo"
++    BEGIN
++        BLOCK "040904b0"
++        BEGIN
++            VALUE "CompanyName", "Google Inc.\0"
++            VALUE "FileDescription", "@PACKAGE@ dissector\0"
++            VALUE "FileVersion", "@MODULE_VERSION@\0"
++            VALUE "InternalName", "@PACKAGE@ @MODULE_VERSION@\0"
++            VALUE "LegalCopyright", "Copyright © 2011 Google, Copyright © 1998 Gerald Combs <gerald@wireshark.org>, Gilbert Ramirez <gram@alumni.rice.edu> and others\0"
++            VALUE "OriginalFilename", "@PLUGIN_NAME@.dll\0"
++            VALUE "ProductName", "Wireshark SPDY Dissector\0"
++            VALUE "ProductVersion", "@VERSION@\0"
++            VALUE "Comments", "Build with @MSVC_VARIANT@\0"
++        END
++    END
++    BLOCK "VarFileInfo"
++    BEGIN
++        VALUE "Translation", 0x409, 1200
++    END
++END
