@@ -1,0 +1,118 @@
+diff -aur wireshark-1.10.5/CMakeLists.txt wireshark-1.10.5-with-spdyshark/CMakeLists.txt
+--- wireshark-1.10.5/CMakeLists.txt	2013-07-03 18:09:41.000000000 -0400
++++ wireshark-1.10.5-with-spdyshark/CMakeLists.txt	2014-02-06 00:17:16.000000000 -0500
+@@ -463,6 +463,7 @@
+ 		plugins/mate
+ 		plugins/opcua
+ 		plugins/profinet
++                plugins/spdyshark
+ 		plugins/stats_tree
+ 		plugins/unistim
+ 		plugins/wimax
+diff -aur wireshark-1.10.5/Makefile.am wireshark-1.10.5-with-spdyshark/Makefile.am
+--- wireshark-1.10.5/Makefile.am	2013-08-07 12:49:23.000000000 -0400
++++ wireshark-1.10.5-with-spdyshark/Makefile.am	2014-02-06 00:17:16.000000000 -0500
+@@ -299,6 +299,7 @@
+ 	-dlopen plugins/mate/mate.la \
+ 	-dlopen plugins/opcua/opcua.la \
+ 	-dlopen plugins/profinet/profinet.la \
++	-dlopen plugins/spdyshark/spdy.la \
+ 	-dlopen plugins/stats_tree/stats_tree.la \
+ 	-dlopen plugins/unistim/unistim.la \
+ 	-dlopen plugins/wimax/wimax.la \
+diff -aur wireshark-1.10.5/Makefile.in wireshark-1.10.5-with-spdyshark/Makefile.in
+--- wireshark-1.10.5/Makefile.in	2013-12-19 14:13:55.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/Makefile.in	2014-02-06 00:47:25.000000000 -0500
+@@ -143,6 +187,7 @@
+ @HAVE_PLUGINS_TRUE@	plugins/irda/irda.la plugins/m2m/m2m.la \
+ @HAVE_PLUGINS_TRUE@	plugins/mate/mate.la plugins/opcua/opcua.la \
+ @HAVE_PLUGINS_TRUE@	plugins/profinet/profinet.la \
++@HAVE_PLUGINS_TRUE@	plugins/spdyshark/spdy.la \
+ @HAVE_PLUGINS_TRUE@	plugins/stats_tree/stats_tree.la \
+ @HAVE_PLUGINS_TRUE@	plugins/unistim/unistim.la \
+ @HAVE_PLUGINS_TRUE@	plugins/wimax/wimax.la \
+@@ -950,6 +1036,7 @@
+ @HAVE_PLUGINS_TRUE@	-dlopen plugins/mate/mate.la \
+ @HAVE_PLUGINS_TRUE@	-dlopen plugins/opcua/opcua.la \
+ @HAVE_PLUGINS_TRUE@	-dlopen plugins/profinet/profinet.la \
++@HAVE_PLUGINS_TRUE@	-dlopen plugins/spdyshark/spdy.la \
+ @HAVE_PLUGINS_TRUE@	-dlopen plugins/stats_tree/stats_tree.la \
+ @HAVE_PLUGINS_TRUE@	-dlopen plugins/unistim/unistim.la \
+ @HAVE_PLUGINS_TRUE@	-dlopen plugins/wimax/wimax.la \
+diff -aur wireshark-1.10.5/configure.ac wireshark-1.10.5-with-spdyshark/configure.ac
+--- wireshark-1.10.5/configure.ac	2013-12-19 14:13:26.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/configure.ac	2014-02-06 00:26:38.000000000 -0500
+@@ -2688,6 +2688,7 @@
+   plugins/mate/Makefile
+   plugins/opcua/Makefile
+   plugins/profinet/Makefile
++  plugins/spdyshark/Makefile
+   plugins/stats_tree/Makefile
+   plugins/unistim/Makefile
+   plugins/wimax/Makefile
+diff -aur wireshark-1.10.5/epan/Makefile.am wireshark-1.10.5-with-spdyshark/epan/Makefile.am
+--- wireshark-1.10.5/epan/Makefile.am	2013-12-17 15:10:15.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/epan/Makefile.am	2014-02-06 00:17:16.000000000 -0500
+@@ -233,6 +233,7 @@
+ 	../plugins/mgcp/packet-mgcp.c \
+ 	../plugins/rdm/packet-rdm.c \
+ 	../plugins/sercosiii/packet-sercosiii.c \
++	../plugins/spdyshark/packet-spdy.c \
+         ../plugins/wimax/crc.c \
+         ../plugins/wimax/crc_data.c \
+         ../plugins/wimax/mac_hd_generic_decoder.c \
+diff -aur wireshark-1.10.5/epan/Makefile.in wireshark-1.10.5-with-spdyshark/epan/Makefile.in
+--- wireshark-1.10.5/epan/Makefile.in	2013-12-19 14:13:43.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/epan/Makefile.in	2014-02-06 00:47:30.000000000 -0500
+@@ -961,6 +1040,7 @@
+ @ENABLE_STATIC_TRUE@@HAVE_PLUGINS_TRUE@	../plugins/mgcp/packet-mgcp.c \
+ @ENABLE_STATIC_TRUE@@HAVE_PLUGINS_TRUE@	../plugins/rdm/packet-rdm.c \
+ @ENABLE_STATIC_TRUE@@HAVE_PLUGINS_TRUE@	../plugins/sercosiii/packet-sercosiii.c \
++@ENABLE_STATIC_TRUE@@HAVE_PLUGINS_TRUE@	../plugins/spdyshark/packet-spdy.c \
+ @ENABLE_STATIC_TRUE@@HAVE_PLUGINS_TRUE@        ../plugins/wimax/crc.c \
+ @ENABLE_STATIC_TRUE@@HAVE_PLUGINS_TRUE@        ../plugins/wimax/crc_data.c \
+ @ENABLE_STATIC_TRUE@@HAVE_PLUGINS_TRUE@        ../plugins/wimax/mac_hd_generic_decoder.c \
+diff -aur wireshark-1.10.5/packaging/nsis/Makefile.nmake wireshark-1.10.5-with-spdyshark/packaging/nsis/Makefile.nmake
+--- wireshark-1.10.5/packaging/nsis/Makefile.nmake	2013-04-23 13:42:17.000000000 -0400
++++ wireshark-1.10.5-with-spdyshark/packaging/nsis/Makefile.nmake	2014-02-06 00:17:16.000000000 -0500
+@@ -54,6 +54,7 @@
+ 	../../plugins/mate/mate.dll \
+ 	../../plugins/opcua/opcua.dll \
+ 	../../plugins/profinet/profinet.dll \
++	../../plugins/spdyshark/spdy.dll \
+ 	../../plugins/stats_tree/stats_tree.dll \
+ 	../../plugins/unistim/unistim.dll \
+ 	../../plugins/wimax/wimax.dll \
+diff -aur wireshark-1.10.5/plugins/Makefile.am wireshark-1.10.5-with-spdyshark/plugins/Makefile.am
+--- wireshark-1.10.5/plugins/Makefile.am	2013-04-22 14:04:14.000000000 -0400
++++ wireshark-1.10.5-with-spdyshark/plugins/Makefile.am	2014-02-06 00:17:16.000000000 -0500
+@@ -33,6 +33,7 @@
+ 	mate \
+ 	opcua \
+ 	profinet \
++	spdyshark \
+ 	stats_tree \
+ 	unistim \
+ 	wimax \
+diff -aur wireshark-1.10.5/plugins/Makefile.in wireshark-1.10.5-with-spdyshark/plugins/Makefile.in
+--- wireshark-1.10.5/plugins/Makefile.in	2013-12-19 14:13:49.000000000 -0500
++++ wireshark-1.10.5-with-spdyshark/plugins/Makefile.in	2014-02-06 00:47:34.000000000 -0500
+@@ -391,6 +467,7 @@
+ 	mate \
+ 	opcua \
+ 	profinet \
++	spdyshark \
+ 	stats_tree \
+ 	unistim \
+ 	wimax \
+diff -aur wireshark-1.10.5/plugins/Makefile.nmake wireshark-1.10.5-with-spdyshark/plugins/Makefile.nmake
+--- wireshark-1.10.5/plugins/Makefile.nmake	2013-04-22 14:04:14.000000000 -0400
++++ wireshark-1.10.5-with-spdyshark/plugins/Makefile.nmake	2014-02-06 00:17:16.000000000 -0500
+@@ -16,6 +16,7 @@
+ 	mate        \
+ 	opcua       \
+ 	profinet    \
++	spdyshark   \
+ 	stats_tree  \
+ 	unistim     \
+ 	wimax       \
