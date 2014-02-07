@@ -1,0 +1,1 @@
+[spdyshark](https://code.google.com/p/spdyshark/) dissector patch updated for Wireshark 1.10.5
